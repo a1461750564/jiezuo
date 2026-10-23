@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+node_modules/
+.venv/
+.env
+.env.*
+!.env.example
+.curate-cache.json
+.pro-evidence/
+.pro-delivery/
+.pro-backups/
+shots/
+*.log

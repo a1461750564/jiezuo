@@ -1,0 +1,514 @@
+{
+  "baseCSS": "body{margin:0;padding:24px;font:16px/1.6 Georgia;color:#123456;background:white}h1{font-size:40px}h2{font-size:28px}p{margin:0}a{color:inherit}",
+  "design": {
+    "fonts": [
+      "Georgia"
+    ],
+    "colors": [
+      "#123456",
+      "#ffffff"
+    ],
+    "radii": [
+      8
+    ],
+    "fontSizes": [
+      16,
+      28,
+      40
+    ]
+  },
+  "cases": [
+    {
+      "rule": "gridBackground",
+      "positive": {
+        "html": "<main>记录</main>",
+        "css": "main{height:250px;background:repeating-linear-gradient(90deg,transparent 0 19px,#eee 19px 20px)}"
+      },
+      "negative": {
+        "html": "<main>记录</main>",
+        "css": "main{height:250px;background:#eee}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "tightTracking",
+      "positive": {
+        "html": "<h1>同一条记录继续核实</h1>",
+        "css": "h1{letter-spacing:-.05em}"
+      },
+      "negative": {
+        "html": "<h1>同一条记录继续核实</h1>",
+        "css": "h1{letter-spacing:-.03em}"
+      },
+      "boundary": "中文 -0.04em 两侧"
+    },
+    {
+      "rule": "italicSerif",
+      "positive": {
+        "html": "<h1>Traceable handoff</h1>",
+        "css": "h1{font:italic 42px Georgia,serif}"
+      },
+      "negative": {
+        "html": "<h1>Traceable handoff</h1>",
+        "css": "h1{font:42px Georgia,serif}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "commonFont",
+      "positive": {
+        "html": "<h1>设备记录</h1>",
+        "css": "h1{font-family:Inter,sans-serif}"
+      },
+      "negative": {
+        "html": "<h1>设备记录</h1>",
+        "css": "h1{font-family:\"PingFang SC\",sans-serif}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "purpleCyan",
+      "positive": {
+        "html": "<b>异常</b><strong>操作</strong>",
+        "css": "b{color:#a020f0}strong{color:#00cfe8}"
+      },
+      "negative": {
+        "html": "<b>异常</b><strong>操作</strong>",
+        "css": "b{color:#a020f0}strong{color:#222}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "creamBackground",
+      "positive": {
+        "html": "<h1>设备记录</h1><p>保留当前对象、已有观察与下一步操作。</p>",
+        "css": "body{background:#f4f1ea}"
+      },
+      "negative": {
+        "html": "<h1>设备记录</h1><p>保留当前对象、已有观察与下一步操作。</p>",
+        "css": "body{background:#f5f6f8}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "coloredGlow",
+      "positive": {
+        "html": "<div>操作</div>",
+        "css": "div{box-shadow:0 0 24px #8040f0}"
+      },
+      "negative": {
+        "html": "<div>操作</div>",
+        "css": "div{box-shadow:0 0 24px #0003}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "radialSpotlight",
+      "positive": {
+        "html": "<main>记录</main>",
+        "css": "main{height:250px;background:radial-gradient(circle,#8844ff88,transparent)}"
+      },
+      "negative": {
+        "html": "<main>记录</main>",
+        "css": "main{height:250px;background:linear-gradient(#eee,#ddd)}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "headingIcon",
+      "positive": {
+        "html": "<div class=\"icon\"><svg width=\"24\" height=\"24\"><circle r=\"8\" cx=\"12\" cy=\"12\"/></svg></div><h1>设备记录</h1>",
+        "css": ".icon{width:40px;height:40px;background:#ddd}"
+      },
+      "negative": {
+        "html": "<button aria-label=\"保存\"><svg width=\"24\" height=\"24\"></svg></button><h1>设备记录</h1>",
+        "css": ""
+      },
+      "boundary": "真实按钮不算装饰图标方块"
+    },
+    {
+      "rule": "borderShadow",
+      "positive": {
+        "html": "<article>现场已有记录</article>",
+        "css": "article{padding:24px;border:1px solid #ccc;box-shadow:0 16px 40px #0002}"
+      },
+      "negative": {
+        "html": "<article>现场已有记录</article>",
+        "css": "article{padding:24px;border:1px solid #ccc;box-shadow:0 2px 4px #0002}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "pulseDot",
+      "positive": {
+        "html": "<i></i>",
+        "css": "i{display:block;width:8px;height:8px;border-radius:50%;background:green;animation:pulse 5s infinite}@keyframes pulse{50%{opacity:.3}}"
+      },
+      "negative": {
+        "html": "<div role=\"status\" aria-live=\"polite\"><i></i>实时连接</div>",
+        "css": "i{display:block;width:8px;height:8px;border-radius:50%;background:green;animation:pulse 5s infinite}@keyframes pulse{50%{opacity:.3}}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "blinkCursor",
+      "positive": {
+        "html": "<i></i>",
+        "css": "i{display:block;width:2px;height:24px;background:#111;animation:blink 5s infinite}@keyframes blink{50%{opacity:.2}}"
+      },
+      "negative": {
+        "html": "<input aria-label=\"命令\" type=\"text\">",
+        "css": "input{caret-color:#123}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "marquee",
+      "positive": {
+        "html": "<div>现场记录连续播放</div>",
+        "css": "div{animation:marquee 40s infinite}@keyframes marquee{to{transform:translateX(20px)}}"
+      },
+      "negative": {
+        "html": "<div>现场记录连续播放</div>",
+        "css": "div{overflow:auto}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "bounceEasing",
+      "positive": {
+        "html": "<button>保存</button>",
+        "css": "button{transition:transform .4s cubic-bezier(.2,1.4,.4,1)}"
+      },
+      "negative": {
+        "html": "<button>保存</button>",
+        "css": "button{transition:transform .4s cubic-bezier(.2,.4,.4,1)}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "flatType",
+      "positive": {
+        "html": "<h2>记录环节</h2><p>保留对象和已经记录的观察，核实之后再更新结论。</p><h2>记录环节</h2><p>保留对象和已经记录的观察，核实之后再更新结论。</p><h2>记录环节</h2><p>保留对象和已经记录的观察，核实之后再更新结论。</p>",
+        "css": "h2,p{font-size:18px}"
+      },
+      "negative": {
+        "html": "<h2>记录环节</h2><p>保留对象和已经记录的观察，核实之后再更新结论。</p><h2>记录环节</h2><p>保留对象和已经记录的观察，核实之后再更新结论。</p><h2>记录环节</h2><p>保留对象和已经记录的观察，核实之后再更新结论。</p>",
+        "css": "h2{font-size:30px}p{font-size:18px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "uniformSpacing",
+      "positive": {
+        "html": "<main><section><h2>记录环节</h2><p>对象与观察</p></section><section><h2>记录环节</h2><p>对象与观察</p></section><section><h2>记录环节</h2><p>对象与观察</p></section><section><h2>记录环节</h2><p>对象与观察</p></section></main>",
+        "css": "section{padding:32px 0;margin-bottom:32px}"
+      },
+      "negative": {
+        "html": "<main><section><h2>记录环节</h2><p>对象与观察</p></section><section><h2>记录环节</h2><p>对象与观察</p></section><section><h2>记录环节</h2><p>对象与观察</p></section><section><h2>记录环节</h2><p>对象与观察</p></section></main>",
+        "css": "section{padding:32px 0;margin-bottom:32px}section:nth-child(2){padding-top:64px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "hugeSentence",
+      "positive": {
+        "html": "<h1>这条记录将对象、现场联系人和已经完成的观察放在一起，保留尚未核实的原因。</h1>",
+        "css": "h1{font-size:64px}"
+      },
+      "negative": {
+        "html": "<p>这条记录将对象、现场联系人和已经完成的观察放在一起，保留尚未核实的原因。</p>",
+        "css": "p{font-size:18px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "dotMetadata",
+      "positive": {
+        "html": "<div>对象 · 观察 · 下一步</div>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<div>对象 / 观察 / 下一步</div>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "arrowSuffix",
+      "positive": {
+        "html": "<a href=\"#record\">查看记录 →</a>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<a href=\"#record\">查看记录</a>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "orphanLine",
+      "positive": {
+        "html": "<p>记录对象与已有观察<br>。</p>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<p>记录对象与已有观察<br>等待继续核实。</p>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "unbalancedHeading",
+      "positive": {
+        "html": "<h1>记录对象与已有观察<br>继续</h1>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<h1>记录对象与已有观察<br>保留记录并继续核实</h1>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "justifiedChinese",
+      "positive": {
+        "html": "<p>记录对象与已有观察。</p>",
+        "css": "p{text-align:justify}"
+      },
+      "negative": {
+        "html": "<p>记录对象与已有观察。</p>",
+        "css": "p{text-align:start}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "wideTracking",
+      "positive": {
+        "html": "<p>记录对象与已有观察。</p>",
+        "css": "p{letter-spacing:.2em}"
+      },
+      "negative": {
+        "html": "<p>记录对象与已有观察。</p>",
+        "css": "p{letter-spacing:.06em}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "tightPadding",
+      "positive": {
+        "html": "<article>记录对象与已有观察。</article>",
+        "css": "article{height:80px;border:1px solid #bbb;padding:2px}"
+      },
+      "negative": {
+        "html": "<article>记录对象与已有观察。</article>",
+        "css": "article{height:80px;border:1px solid #bbb;padding:16px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "edgeText",
+      "positive": {
+        "html": "<p>记录对象与已有观察。</p>",
+        "css": "body{margin:0;padding:0}"
+      },
+      "negative": {
+        "html": "<p>记录对象与已有观察。</p>",
+        "css": "body{margin:0;padding:24px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "scrollEdge",
+      "positive": {
+        "html": "<div class=\"scroll\"><article>记录对象与已有观察。</article><article>下一条记录</article></div>",
+        "css": ".scroll{display:flex;width:260px;overflow-x:auto;gap:16px}.scroll article{min-width:240px;height:80px;border:1px solid #aaa;border-radius:8px;padding:16px}"
+      },
+      "negative": {
+        "html": "<div class=\"scroll\"><article>记录对象与已有观察。</article><article>下一条记录</article></div>",
+        "css": ".scroll{display:flex;width:260px;overflow-x:auto;gap:16px}.scroll article{min-width:240px;height:80px;border:1px solid #aaa;border-radius:8px;padding:16px}.scroll{padding-left:16px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "brokenImage",
+      "positive": {
+        "html": "<img src=\"missing.png\" alt=\"对象\" width=\"100\" height=\"100\">",
+        "css": ""
+      },
+      "negative": {
+        "html": "<img src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'/%3E\" alt=\"\" width=\"100\" height=\"100\">",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "repeatedCardText",
+      "positive": {
+        "html": "<article class=\"card\"><p>原因待核实</p><p>原因待核实</p><p>原因待核实</p></article>",
+        "css": ".card{border:1px solid #aaa;border-radius:8px;padding:16px}"
+      },
+      "negative": {
+        "html": "<article class=\"card\"><p>原因待核实</p><p>现场观察已记录</p><p>继续复现</p></article>",
+        "css": ".card{border:1px solid #aaa;border-radius:8px;padding:16px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "zoomDisabled",
+      "positive": {
+        "html": "<meta name=\"viewport\" content=\"width=device-width,user-scalable=no\"><h1>设备记录</h1><p>保留当前对象、已有观察与下一步操作。</p>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><h1>设备记录</h1><p>保留当前对象、已有观察与下一步操作。</p>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "transitionAll",
+      "positive": {
+        "html": "<button>保存</button>",
+        "css": "button{transition:all .2s}"
+      },
+      "negative": {
+        "html": "<button>保存</button>",
+        "css": "button{transition:color .2s}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "focusRemoved",
+      "positive": {
+        "html": "<button>保存</button>",
+        "css": "button{outline:none}"
+      },
+      "negative": {
+        "html": "<button>保存</button>",
+        "css": "button{outline:none}button:focus-visible{outline:3px solid blue}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "fieldAutocomplete",
+      "positive": {
+        "html": "<label>联系邮箱<input type=\"email\" name=\"email\"></label>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<label>联系邮箱<input type=\"email\" name=\"email\" autocomplete=\"email\"></label>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "imageDimensions",
+      "positive": {
+        "html": "<img src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'/%3E\" alt=\"对象\">",
+        "css": ""
+      },
+      "negative": {
+        "html": "<img src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'/%3E\" alt=\"对象\" width=\"100\" height=\"100\">",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "headingLevel",
+      "positive": {
+        "html": "<h1>记录</h1><h3>观察</h3>",
+        "css": ""
+      },
+      "negative": {
+        "html": "<h1>记录</h1><h2>观察</h2>",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "fieldLabel",
+      "positive": {
+        "html": "<input id=\"record\" name=\"record\">",
+        "css": ""
+      },
+      "negative": {
+        "html": "<label for=\"record\">对象</label><input id=\"record\" name=\"record\">",
+        "css": ""
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "overlayClipped",
+      "positive": {
+        "html": "<div class=\"clip\"><div role=\"menu\">查看记录</div></div>",
+        "css": ".clip{position:relative;overflow:hidden;width:200px;height:30px}[role=menu]{position:absolute;top:20px;width:250px;height:80px;background:white}"
+      },
+      "negative": {
+        "html": "<div class=\"clip\"><div role=\"menu\">查看记录</div></div>",
+        "css": ".clip{position:relative;overflow:visible;width:200px;height:30px}[role=menu]{position:absolute;top:20px;width:250px;height:80px;background:white}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "textOccluded",
+      "positive": {
+        "html": "<p>需要查看的现场记录</p><div class=\"cover\"></div>",
+        "css": "p{width:200px}.cover{position:absolute;top:24px;left:24px;width:240px;height:70px;background:white;z-index:5}"
+      },
+      "negative": {
+        "html": "<p>需要查看的现场记录</p><div class=\"cover\"></div>",
+        "css": "p{width:200px}.cover{position:absolute;top:140px;left:24px;width:240px;height:70px;background:white;z-index:5}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "designFont",
+      "positive": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{font-family:Arial}"
+      },
+      "negative": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{font-family:Georgia}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "designColor",
+      "positive": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{color:#abcdef}"
+      },
+      "negative": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{color:#123456}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "designRadius",
+      "positive": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{border-radius:20px}"
+      },
+      "negative": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{border-radius:8px}"
+      },
+      "boundary": ""
+    },
+    {
+      "rule": "designSize",
+      "positive": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{font-size:24px}"
+      },
+      "negative": {
+        "html": "<p>当前对象和已有观察</p>",
+        "css": "p{font-size:16px}"
+      },
+      "boundary": ""
+    }
+  ]
+}

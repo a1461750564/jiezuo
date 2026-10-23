@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>渡衡 · 签收单</title><link rel="stylesheet" href="style.css"></head>
+<body class="paper"><a class="skip" href="#record">跳到签收单</a>
+<header><a class="brand" href="a.html">渡衡展运<span class="brand-mark" aria-hidden="true">渡</span></a><a href="methods.html">交接依据 <span aria-hidden="true">↗</span></a></header>
+<main><section class="hero"><div class="paper-opening"><h1 data-copy="title">从开箱到复位，<br>依据跟着走。</h1><p data-copy="subtitle">把观察、已留依据和未决事项交给下一位。</p></div>
+<div class="record" id="record"><div class="record-head"><div><p class="record-kind">展运签收单</p><h2>DH-206</h2></div><div class="record-person">经办人<strong>阮溪</strong></div><span class="paper-stamp">复位状态<br>待复核</span></div>
+<div class="record-observation"><span class="field-label">开箱观察</span><p>10:42 开箱发现右下角缓冲垫移位</p></div>
+<div class="record-pending"><span class="field-label">未决事项</span><p>冲击记录待调取<span>复位状态待复核</span></p></div>
+<div class="phase-layout"><div id="phase-controls" role="group" aria-label="查看交接阶段"><button type="button" data-phase="0" aria-pressed="true"><span>01</span>接件</button><button type="button" data-phase="1" aria-pressed="false"><span>02</span>开箱</button><button type="button" data-phase="2" aria-pressed="false"><span>03</span>复位</button></div>
+<div class="phase-detail" aria-live="polite"><div class="phase-detail-head"><h3 id="phase-title">接件</h3><span id="phase-status">已登记</span></div><ul id="phase-note"><li>10:15 外箱交接登记</li></ul></div></div>
+<div class="record-bottom"><span>同一份记录，随阶段保留已有依据。</span><a class="action" href="#handoff" data-copy="cta">查看这次交接 <span aria-hidden="true">↓</span></a></div></div></section>
+<section id="handoff" class="paper-handoff"><div class="section-heading"><p class="object-reference">DH-206 · 阮溪</p><h2>下一位需要拿到什么。</h2><p>已有依据继续保留，未决事项一起交接。</p></div>
+<div class="phase-grid"><article data-event="0"><div class="phase-number">01 <span>已登记</span></div><h3>接件</h3><p>10:15 外箱交接登记</p><div class="carry"><span>已有依据</span><p>外箱交接登记</p></div></article>
+<article data-event="1"><div class="phase-number">02 <span>已留照片</span></div><h3>开箱</h3><p>10:42 开箱发现右下角缓冲垫移位</p><div class="carry"><span>累计依据</span><p>10:15 外箱交接登记</p><p>10:58 已保留开箱照片</p></div></article>
+<article data-event="2" class="unresolved"><div class="phase-number">03 <span>待复核</span></div><h3>复位</h3><p>复位状态待复核</p><div class="carry"><span>带入下一步</span><p>外箱交接登记 · 开箱观察 · 开箱照片</p><p>冲击记录待调取</p></div></article></div>
+<div class="paper-next"><span class="field-label">下一步</span><p>下一步对照装箱清单与冲击记录</p></div></section>
+<section class="paper-ending"><div><p class="object-reference">DH-206 · 展运签收单</p><h2>沿着同一份签收单继续。</h2></div><a class="text-action" href="#record">返回签收单 <span aria-hidden="true">↑</span></a></section></main>
+<footer><span>渡衡展运</span><span>合成场景，未连接真实展品运输</span></footer>
+<script>
+const phaseData=[{title:'接件',status:'已登记',notes:['10:15 外箱交接登记']},{title:'开箱',status:'已有观察与照片',notes:['10:15 外箱交接登记','10:42 开箱发现右下角缓冲垫移位','10:58 已保留开箱照片']},{title:'复位',status:'待复核',notes:['10:15 外箱交接登记','10:42 开箱发现右下角缓冲垫移位','10:58 已保留开箱照片','冲击记录待调取','复位状态待复核','下一步对照装箱清单与冲击记录']}];
+document.querySelectorAll('[data-phase]').forEach(button=>button.addEventListener('click',()=>{const phase=phaseData[Number(button.dataset.phase)];document.querySelectorAll('[data-phase]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.getElementById('phase-title').textContent=phase.title;document.getElementById('phase-status').textContent=phase.status;document.getElementById('phase-note').replaceChildren(...phase.notes.map(note=>{const li=document.createElement('li');li.textContent=note;return li;}));}));
+</script></body></html>

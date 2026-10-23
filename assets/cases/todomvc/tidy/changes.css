@@ -1,0 +1,5 @@
+/* Independent modifications: MIT, Oil UI Enhanced contributors. */
+body{font-family:system-ui,-apple-system,sans-serif;line-height:1.5} .todo-list li label{overflow-wrap:anywhere;line-height:1.5} .footer{height:auto;min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 15px}.filters{position:static}.todo-count,.clear-completed,html .clear-completed:active{float:none}.footer[style*="display: block"]{display:flex!important}.footer:before{pointer-events:none}:focus-visible{outline:3px solid #2457d6;outline-offset:3px}.todoapp .footer .filters a{display:inline-block;padding:6px 9px}.info{line-height:1.7}button{cursor:pointer}.destroy{display:block!important}@media(max-width:500px){body{min-width:260px}.todoapp{margin:110px 12px 30px}.footer{font-size:13px}.new-todo{font-size:19px}.todo-list li{font-size:19px}.filters{bottom:auto}}
+
+/* Attribution remains visible; upstream baseline retains its original size. */
+.info{font-size:12px}

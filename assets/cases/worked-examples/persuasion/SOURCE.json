@@ -1,0 +1,19 @@
+{
+  "source": "Project-generated synthetic teaching example, adapted within Jiezuo (formerly Oil UI Enhanced).",
+  "license": "Project-generated teaching adaptation; MIT, original third-party notices remain applicable.",
+  "originalFilesSha256": {
+    "a.html": "c041c448ea4c5fcce780bce8bcb605c00eef4c98295eef11e4de72d28ae79cc8",
+    "c.html": "3d25acc95cd5eb07cdd4ac2aad8cf173a485c43177945aae3536131071312a5f",
+    "methods.html": "213204bade03e24ce4d2c8c2c94460f119eb06289f8fdfaa529e928abc1a9850",
+    "style.css": "bf3d38789b91c09d1dd245f8b5d9c4bdeaa2255a2e9ed2017ae85da216a53370",
+    "server.mjs": "79c3665cd17bc0e076d73c4af6bb08a9776a8b1616c2c2adb17bb26ec992fe7e",
+    "content.json": "1198876316fecee0e6719f5d480ed25a8bb7ac0cc59cc65c4a2efdf2e392902e"
+  },
+  "changes": [
+    "Local harness favicon returns204; does not change page or business facts.",
+    "Teaching-only C schematic maps the existing outer-box/right-lower-pad observation; labelled schematic, no new fact/readout. Style scoped to case-object.",
+    "Lint-confirmed typography repair: pretty paragraphs, balanced subheadings, record label tracking reduced; no fixed copy changed.",
+    "Final targeted text wrapping: opening/method paragraphs use balanced lines after pretty left a two-character last line."
+  ],
+  "evaluationScope": "Teaching adaptation; no independent score is claimed for this copy. Private historical evaluation records are not distributed."
+}

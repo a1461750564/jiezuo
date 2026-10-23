@@ -1,0 +1,38 @@
+{
+  "name": "潮间 · 夜场",
+  "subtitle": "退潮之后，声音上岸。",
+  "venue": "东滩旧船坞 3 号库",
+  "sessions": [
+    {
+      "id": "sat",
+      "label": "11月15日（周六）19:30",
+      "soldOut": true
+    },
+    {
+      "id": "sun",
+      "label": "11月16日（周日）19:30",
+      "soldOut": false
+    }
+  ],
+  "artists": [
+    "雾港乐队",
+    "林知夏（独唱）",
+    "低频合作社"
+  ],
+  "tickets": [
+    {
+      "id": "single",
+      "label": "单人",
+      "price": 180,
+      "people": 1
+    },
+    {
+      "id": "double",
+      "label": "双人",
+      "price": 320,
+      "people": 2
+    }
+  ],
+  "maxPeople": 4,
+  "cta": "选择场次"
+}

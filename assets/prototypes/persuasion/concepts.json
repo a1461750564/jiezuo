@@ -1,0 +1,79 @@
+{
+  "contentSha256": "d5911da93283e6aed5f5e1156d89c21f0557798bf0b6a4fb8d0dcf04e808ab25",
+  "candidates": [
+    {
+      "id": "a",
+      "concept": "接续：以可操作记录证明交接连续性",
+      "skeleton": "通栏大字 → 同一记录的连续阶段",
+      "font": "PingFang SC",
+      "palette": "中性纸色、深绿文字与蓝色动作",
+      "mainVisual": "会议屏与投屏终端的示意线稿，同一张工单用挂绳挂在终端上；阶段切换联动示意上的已记录/待对照标记",
+      "motion": "轻量背景视差",
+      "chosen": "完整主方案及相关内页",
+      "argument": "对象/使用过程说服：先让人操作同一条记录，再说明交接价值，最后给出接力路径",
+      "readingOrder": [
+        "首屏：可切换阶段的记录",
+        "#record 交接价值：接手时带过去的字段",
+        "#workflow 接力：谁持有记录、哪一站待核实",
+        "收尾：接着这条记录往下做"
+      ],
+      "composition": "左右对位的交接单与通栏接力线，节奏由操作对象逐步展开到路径",
+      "graphics": "示意线稿标明“示意”，只钉已记录的间歇断连（实心）与待对照的供电、信号（虚线空心）；白底工单贯穿首屏与交接单；接力线实心为已发生、虚线空心点为待核实",
+      "controls": "首屏阶段切换按钮；正文链接进入相关内页；收尾进入合成工作区",
+      "footer": "深绿页尾延续接力线，列出三站阶段",
+      "firstScreenCheck": "pro.12 遮字检查通过：桌面与手机首屏都能认出会议屏、投屏终端和挂在终端上的工单"
+    },
+    {
+      "id": "b",
+      "concept": "可信：以编辑式宣言与案例票据解释已知和未知",
+      "skeleton": "居中极大衬线字 + 案例票据",
+      "font": "Songti SC",
+      "palette": "暖纸、深褐与朱红",
+      "mainVisual": "CM-204 现场观察与核实票据",
+      "motion": "静态",
+      "exception": "偏离 SaaS 常见首屏，保留相同事实与入口",
+      "argument": "主张/证据说服：先亮主张“暂时恢复不等于修好”，再逐步放出已知、未知与限制，最后才给行动",
+      "readingOrder": [
+        "首屏：居中宣言与案例票据",
+        "主张：暂时恢复，不等于已经修好",
+        "#record 已知/未知对开账",
+        "#workflow 三步得出结论",
+        "收尾：未知，不写成成功"
+      ],
+      "composition": "全程居中的编辑式单栏，账目对开以中线分隔，方法以悬挂数字排成正文",
+      "graphics": "宋体大字、朱红强调“不等于”与“未知”，细线分隔，不用卡片",
+      "controls": "只有首屏与收尾两处入口，正文不放操作，避免打断论证",
+      "footer": "版权页式页尾，与导航上方朱红粗线首尾呼应，说明合成与许可",
+      "firstScreenCheck": "pro.12 遮字检查不通过：满版字遮去后只剩票据分隔线与按钮；保留为编辑式对照方向，不作首屏辨识正例"
+    },
+    {
+      "id": "c",
+      "concept": "可核：以实际记录流与持续跟进的路径说服",
+      "skeleton": "画面即界面，通栏日志 → 连续一镜场景",
+      "font": "Menlo + Heiti SC",
+      "palette": "深墨蓝、灰绿与荧光黄绿",
+      "mainVisual": "同一 CM-204 记录沿已有 10:18、10:24 与下一步日志逐页展开",
+      "motion": "非劫持的一镜到底，减少动态效果时正常文流",
+      "argument": "连续关系说服：先让同一对象在滚动中推进，再展示每一步留下的痕迹，最后用核实状态表让读者自己对照",
+      "readingOrder": [
+        "首屏：日志即界面",
+        "一镜到底：同一对象连续推进",
+        "#workflow 每一步留下什么",
+        "#record 逐项核实状态表",
+        "收尾：打开同一条记录，自己核对"
+      ],
+      "composition": "首屏日志进入同一份档案，电脑由居中单页向两页、三页连续展开；手机按同一顺序向下展开，随后交接到记录路径与状态表",
+      "graphics": "等宽字与荧光黄绿时间戳；同一档案内相接的记录页，待核实页以虚线和未知状态文字区别，不只靠颜色",
+      "controls": "首屏入口；状态表只读，核实动作留给合成工作区",
+      "footer": "状态栏式页尾，分格显示合成环境与无真实写入",
+      "firstScreenCheck": "pro.12 遮字检查不通过：首屏日志行遮去后只剩横线；保留为连续记录对照方向，不作首屏辨识正例"
+    }
+  ],
+  "invariants": [
+    "title/subtitle/CTA/steps/case/owner/observation/status/secondary fixed",
+    "section headings, reading order and footer follow each concept; facts and boundaries stay the same",
+    "same business claims and mock boundary",
+    "no actual API or invented success metrics"
+  ],
+  "ownership": "Independent concepts and code; not copied from Oil UI Pro or third-party restricted libraries"
+}

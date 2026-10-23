@@ -1,0 +1,13 @@
+{
+  "source": "Project-generated synthetic teaching example, adapted within Jiezuo (formerly Oil UI Enhanced).",
+  "license": "Project-generated teaching adaptation; MIT, original third-party notices remain applicable.",
+  "originalFilesSha256": {
+    "index.html": "adc69d1a8735a272b6ec74ba16bf48143d48731d3f2737ce5c3e7406a02cace2",
+    "app.js": "ab5a69e5356f2dd619c5a9f3bb5ba6a3277107d89d03c9f72f31859938aace94",
+    "server.mjs": "80752db02df380abae60a115c5b532ca001012322822776a96570bde8fd51bc9"
+  },
+  "changes": [
+    "Local harness favicon returns204; does not change page or business facts."
+  ],
+  "evaluationScope": "Teaching adaptation; no independent score is claimed for this copy. Private historical evaluation records are not distributed."
+}

@@ -1,0 +1,55 @@
+{
+  "source": "Project-generated synthetic teaching example, adapted within Jiezuo (formerly Oil UI Enhanced).",
+  "originalFilesSha256": {
+    "app.js": "12165c3037f1926cbc7d86d62a8833a79a404e12f5ba6bbe97aa67db856632ea",
+    "assets/dock-stage.svg": "d1bd0d2399745a8af2d67009d715d98a809ba77a13dcebb3df286d1ce65f27ab",
+    "assets/sound-object.svg": "a3132d09b2f4b72017f9eb341ef068236b7cc20fd8dbfb616657eb16d45d1fb8",
+    "index.html": "4a16e6fd7801c634fe59f5c74d42295db8a5a4285ea92be52a565d26fa788527",
+    "style.css": "296d98b6fcb8dd26592465d53eeec7081c3d6032de6f97e569162c695fcb5390",
+    "tickets.html": "eb95d27c8b111b8805f255de8ddad98d9336da31fd25cb98451f17b194432d32",
+    "vendor/alpine.min.js": "1d8911c7b8a55bd0ceb79896251ca00d575915e2cd4348e8007a850e59ba0dc0"
+  },
+  "purpose": "Demonstrate one visual concept across the home page, core content, selection, confirmation and demo result.",
+  "license": "MIT; bundled Alpine.js remains subject to its existing third-party notice.",
+  "changes": [
+    "Keep selected A hero markup, original sound-object.svg, base stylesheet and font families unchanged.",
+    "Replace repeated membrane and generic lower modules with lineup poster, warehouse-address composition and actionable date tickets.",
+    "Replace small speaker summary with one ticket object shared by selection, confirmation and demo result.",
+    "Teaching correction: reconcile completion reload/direct URL with confirmation or selection; draft persists but demo receipt does not.",
+    "Normalize original geometric venue schematic to the approved palette; still labelled non-factual spatial illustration."
+  ],
+  "facts": "content.json",
+  "knownLimits": [
+    "Synthetic local demo only; no payment, real order or real ticket.",
+    "Phone evidence uses Chrome emulation; not real-device or screen-reader certification."
+  ],
+  "staticTeachingImages": {
+    "images/desktop-home.png": {
+      "sha256": "8c958a2af63ee2a72131d05580c34bef54075fefce3e02a160e665b495387368",
+      "source": "images/desktop-home.png",
+      "modified": false
+    },
+    "images/desktop-before-lower-all.png": {
+      "sha256": "9de60665ad3447379064628abbe2b2bdbcf71bc3e2698e51bdb2f386cf6d8b6f",
+      "source": "images/desktop-before-lower-all.png",
+      "modified": false
+    },
+    "images/desktop-lower-all.png": {
+      "sha256": "249cd6f9e42898c8022d9c5312b27daeb04d7d0d62f0ec56d61f34dc5392b359",
+      "source": "images/desktop-lower-all.png",
+      "modified": false
+    },
+    "images/desktop-confirm.png": {
+      "sha256": "2fd066253baa43ea626ebb08ffc5b0e3bbbc5d5453d876c9f9ccf5c0537e95e3",
+      "source": "images/desktop-confirm.png",
+      "modified": false
+    },
+    "images/phone-confirm.png": {
+      "sha256": "b61238301d466e8990e5b2ce8c632c0e84a2745a7f61bce130d6819b05f5d093",
+      "source": "images/phone-confirm.png",
+      "modified": false
+    }
+  },
+  "staticImageBoundary": "Existing teaching renders retained byte-for-byte; they are not an independent score, new capture or real browser 200% verification.",
+  "evaluationScope": "Teaching adaptation; no independent score is claimed for this copy. Private historical evaluation records are not distributed."
+}

@@ -1,0 +1,20 @@
+{
+  "source": "tastejs/todomvc@ff43b02e59dfa604386bb382034b2cd07c2bcd8a/examples/javascript-es5",
+  "originalFiles": "baseline/ and upstream-src/ retain the vendored source from the pinned upstream revision above.",
+  "variants": {
+    "tidy": "spacing, text wrapping, focus visibility and footer overflow only; preserve layout/brand and process",
+    "upgrade": "same brand; explicit keyboard-accessible edit action, labels and narrow layout; original dblclick still works",
+    "reshape": "authorized new neutral/blue direction with navigation/info regions; same CRUD, fields/routes; no business rewrite",
+    "feature": "upgrade plus title search over existing rendered list; keep hash filters and data unchanged"
+  },
+  "license": "LICENSE; embedded Underscore template attribution in UNDERSCORE-LICENSE",
+  "baselineStorage": "closure MemoryStorage; per-page memory only, not localStorage",
+  "integration": "Original MVC Store/Model/View/Controller used in every tier. No installation required.",
+  "expectedLoadErrors": [
+    {
+      "request": "learn.json (404, once per page view)",
+      "from": "baseline/base.js getFile('learn.json', Learn), shared by all five copies",
+      "reason": "Upstream base.js asks the TodoMVC site for its learn sidebar data. The file is deliberately not vendored: loading it would inject the learn sidebar into every tier and make base.js request the GitHub issues API, changing the baseline layout and adding network traffic. Treat this 404 as source baseline, not a regression; other load errors still count."
+    }
+  ]
+}

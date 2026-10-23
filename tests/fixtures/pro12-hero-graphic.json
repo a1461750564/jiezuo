@@ -1,0 +1,15 @@
+{
+  "baseCSS": "body{margin:0;padding:24px;font:16px/1.6 sans-serif;color:#123;background:#f4f6f2}h1{font-size:30px;margin:0 0 16px}.card{max-width:640px;padding:20px;background:#ff9a70;border-radius:6px}.card p{margin:0 0 8px}.visual{display:block;width:min(100%,420px);height:auto;margin:0 0 16px}",
+  "cases": [
+    {
+      "id": "text-card-record",
+      "expectNote": true,
+      "html": "<div class=\"card\"><p>车辆 BK-317</p><p>雨后刹车有异响</p><p>已调紧刹车线，尚未路试</p><a href=\"#\">打开复检单</a></div>"
+    },
+    {
+      "id": "object-record",
+      "expectNote": false,
+      "html": "<svg class=\"visual\" viewBox=\"0 0 420 240\" aria-hidden=\"true\" data-hero-visual=\"车架示意\"><g fill=\"none\" stroke=\"#21634c\" stroke-width=\"6\"><circle cx=\"90\" cy=\"170\" r=\"60\"/><circle cx=\"330\" cy=\"170\" r=\"60\"/><path d=\"M90 170L170 70H300L330 170M170 70L210 170H90M210 170L300 70\"/></g><circle cx=\"90\" cy=\"170\" r=\"10\" fill=\"#21634c\"/></svg><div class=\"card\"><p>车辆 BK-317</p><p>雨后刹车有异响</p><a href=\"#\">打开复检单</a></div>"
+    }
+  ]
+}

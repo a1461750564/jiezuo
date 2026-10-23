@@ -1,0 +1,213 @@
+{
+  "frozenAt": "2026-10-19T16:20:00.971609+08:00",
+  "basis": "P2 已实现的队列、对象、审批、表单部分失败、编辑、证据、预约与关系；本项目独立分类，不是官方19名称",
+  "cards": [
+    {
+      "id": "C01",
+      "title": "下一项队列",
+      "structure": "对象优先级、摘要、主处理入口",
+      "action": "处理当前项",
+      "states": [
+        "待处理",
+        "已处理"
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "对象概览",
+      "structure": "标识与键值属性",
+      "action": "展开详情",
+      "states": [
+        "默认",
+        "详情"
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "审批决策",
+      "structure": "理由与互斥决策",
+      "action": "同意或退回",
+      "states": [
+        "待决",
+        "已同意",
+        "已退回"
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "后台任务",
+      "structure": "进度、阶段与恢复动作",
+      "action": "暂停或重试",
+      "states": [
+        "运行",
+        "暂停",
+        "错误",
+        "完成"
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "文件交付",
+      "structure": "格式、预览与文件动作",
+      "action": "下载合成文本",
+      "states": [
+        "就绪",
+        "已下载"
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "活动时间线",
+      "structure": "带时间顺序的事件",
+      "action": "展开历史",
+      "states": [
+        "折叠",
+        "展开"
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "消息回复",
+      "structure": "发送者与消息/回复输入",
+      "action": "发送本地回复",
+      "states": [
+        "未回复",
+        "已回复"
+      ]
+    },
+    {
+      "id": "C08",
+      "title": "方案比较",
+      "structure": "互斥选项及差异",
+      "action": "选择方案",
+      "states": [
+        "未选",
+        "已选"
+      ]
+    },
+    {
+      "id": "C09",
+      "title": "趋势指标",
+      "structure": "当前值与时序背景",
+      "action": "切换时间范围",
+      "states": [
+        "周",
+        "月"
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "异常处置",
+      "structure": "严重性、影响与确认",
+      "action": "确认已知悉",
+      "states": [
+        "未确认",
+        "已确认"
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "步骤清单",
+      "structure": "多项子任务与完成比",
+      "action": "勾选步骤",
+      "states": [
+        "未完成",
+        "部分",
+        "完成"
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "空态起步",
+      "structure": "没有对象时的唯一下一步",
+      "action": "创建本地草稿",
+      "states": [
+        "空",
+        "已有草稿"
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "证据检索",
+      "structure": "来源、命中摘要与解释",
+      "action": "展开来源依据",
+      "states": [
+        "摘要",
+        "来源"
+      ]
+    },
+    {
+      "id": "C14",
+      "title": "预约时段",
+      "structure": "日期/占用与改期",
+      "action": "改选时段",
+      "states": [
+        "原时段",
+        "已改期"
+      ]
+    },
+    {
+      "id": "C15",
+      "title": "库存数量",
+      "structure": "当前可用量、步进与限制",
+      "action": "调整申请数量",
+      "states": [
+        "边界",
+        "有效数量"
+      ]
+    },
+    {
+      "id": "C16",
+      "title": "批量结果",
+      "structure": "确定成功项与失败项拆分",
+      "action": "只重试失败项",
+      "states": [
+        "部分成功",
+        "全部确认"
+      ]
+    },
+    {
+      "id": "C17",
+      "title": "版本差异",
+      "structure": "前后文本与互斥取舍",
+      "action": "接受或保留",
+      "states": [
+        "待决",
+        "接受",
+        "保留"
+      ]
+    },
+    {
+      "id": "C18",
+      "title": "人员分派",
+      "structure": "当前负责人及候选",
+      "action": "更换负责人",
+      "states": [
+        "原负责人",
+        "已更换"
+      ]
+    },
+    {
+      "id": "C19",
+      "title": "依赖关系",
+      "structure": "对象与上下游关联",
+      "action": "展开影响路径",
+      "states": [
+        "摘要",
+        "关联路径"
+      ]
+    }
+  ],
+  "otherMandatory": [
+    "spatial fold/unfold, separate from 19",
+    "flowing glow",
+    "dot matrix",
+    "flowing gradient",
+    "game start/run/pause/resume/end/restart/save/restore",
+    "WebGL realtime 3D loading/error/unavailable fallback",
+    "persuasion multi-concept + full page and inner page",
+    "parallax + one-take scroll; reduced motion",
+    "anti-default + 100% real reading and real browser 200% + sentence subtraction"
+  ],
+  "scope": "One reusable gallery, shared base styles allowed; not 19 apps. State controls only in prototypes. No external component or font dependency."
+}

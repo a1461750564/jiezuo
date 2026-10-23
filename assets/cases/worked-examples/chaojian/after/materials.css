@@ -1,0 +1,91 @@
+/* One event, different working materials: poster, address, date ticket, checkout. */
+.poster-caption{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.poster-caption h2{font-size:22px;font-weight:550;line-height:1.4}
+.poster-caption p{font-size:14px}
+.lineup-poster{padding:65px var(--space) 28px;background:var(--ink);color:var(--orange)}
+.lineup-poster .poster-caption{color:var(--paper)}
+.lineup-names{padding-block:44px 54px;display:flex;flex-direction:column;gap:24px}
+.lineup-names h3{font-family:"Songti SC","STSong",serif;font-size:clamp(58px,8.2vw,122px);line-height:1.14;font-weight:700;letter-spacing:-.035em}
+.lineup-names h3:nth-child(2){align-self:center}
+.lineup-names h3:nth-child(3){align-self:flex-end}
+.lineup-names h3 span{font-family:"PingFang SC","Hiragino Sans GB",sans-serif;font-size:.3em;font-weight:500;letter-spacing:0;display:inline-block;vertical-align:middle;margin-left:14px}
+.poster-foot{border-top:1px solid #788471;display:flex;justify-content:space-between;gap:20px;padding-top:22px;font-size:14px;color:var(--paper)}
+.venue-print{display:grid;grid-template-columns:.65fr 1.15fr 1.7fr;align-items:center;gap:38px;padding:72px var(--space);overflow:hidden}
+.warehouse-mark{font-family:"Songti SC","STSong",serif;font-size:clamp(150px,20vw,280px);font-weight:700;line-height:.9;color:var(--orange);align-self:end}
+.venue-address .overline{font-size:14px;margin-bottom:25px}
+.venue-address h2{font-family:"Songti SC","STSong",serif;font-size:clamp(30px,3.2vw,46px);line-height:1.35;font-weight:700;white-space:nowrap}
+.venue-address h2 span{font-size:1.45em}
+.venue-address>p:last-child{font-size:14px;margin-top:20px;color:var(--muted)}
+.warehouse-drawing{margin-left:14px;align-self:center}
+.warehouse-drawing img{width:100%;height:auto}
+.warehouse-drawing p{font-size:12px;margin-top:10px;color:var(--muted);text-align:right}
+.session-print{padding:68px var(--space) 60px;background:var(--orange)}
+.date-tickets{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.date-ticket{min-width:0;background:var(--paper);display:flex;flex-direction:column;position:relative}
+.date-face{padding:26px 30px 28px;display:grid;grid-template-columns:auto 1fr;column-gap:20px;align-items:start}
+.date-month{font-size:14px;line-height:1.5;writing-mode:vertical-rl;padding-top:14px}
+.date-number{font-family:"Songti SC","STSong",serif;font-size:clamp(100px,13vw,188px);font-weight:700;line-height:1;letter-spacing:-.06em}
+.date-fixed{grid-column:1/3;margin-top:20px}
+.date-fixed h3{font-size:19px;font-weight:650;line-height:1.5}
+.date-fixed p{font-size:14px;margin-top:8px}
+.ticket-stub{border-top:1px dashed var(--muted);position:relative;margin-top:auto;padding:22px 30px;min-height:99px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--orange)}
+.ticket-stub::before{left:-9px}.ticket-stub::after{right:-9px}
+.ticket-stub .stamp{font-size:20px;font-weight:650;white-space:nowrap}
+.ticket-stub>p{max-width:200px;font-size:14px}
+.date-ticket.sold{background:#d4d7c9;color:#525d4e}
+.date-ticket.sold .date-number{color:#727b69}
+.ticket-stub .btn{min-height:53px;padding:12px 20px;gap:22px}
+.ticket-prices{display:flex;align-items:baseline;gap:30px;margin-top:32px}
+.ticket-prices p{font-size:18px;font-weight:600}
+.ticket-prices span{margin-left:auto;font-size:14px}
+.ticket-body .ticket-page{padding-block:28px 70px;max-width:1440px}
+.ticket-body .breadcrumb{margin-bottom:10px}
+.ticket-body .page-title{font-size:clamp(32px,3.5vw,48px);margin-bottom:0}
+.ticket-body .step-nav{margin-block:22px 32px}
+.ticket-body .ticket-layout{grid-template-columns:minmax(285px,.8fr) minmax(0,1.2fr);gap:0;align-items:stretch;isolation:isolate}
+.ticket-identity{background:var(--orange);padding:28px 34px 30px;position:relative;display:flex;flex-direction:column;min-width:0}
+.identity-top{display:flex;justify-content:space-between;gap:20px;font-size:13px}
+.identity-name{font-family:"Songti SC","STSong",serif;font-size:clamp(70px,8.6vw,125px);line-height:1.2;font-weight:800;letter-spacing:-.05em;margin-top:42px}
+.identity-sub{font-size:18px;margin-top:4px}
+.identity-date{display:flex;gap:22px;align-items:start;margin-top:38px}
+.identity-date .date-month{padding-top:19px}
+.identity-day{font-family:"Songti SC","STSong",serif;font-size:clamp(110px,12vw,174px);line-height:1;font-weight:650;letter-spacing:-.06em}
+.identity-session{font-size:17px;font-weight:650;margin-top:16px}
+.identity-venue{font-size:15px;margin-top:8px}
+.identity-selection{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-top:auto;padding-top:45px}
+.identity-selection span{font-size:18px}.identity-selection b{font-size:30px;font-weight:550}
+.identity-selection strong{font-size:40px;font-weight:550;font-variant-numeric:tabular-nums;line-height:1.3}
+.identity-boundary{border-top:1px solid #8b4027;padding-top:18px;margin-top:20px;font-size:13px;line-height:1.8}
+.ticket-body .form-area{background:var(--white);padding:34px 38px 36px;max-width:none;border-left:1px dashed var(--ink);min-width:0;position:relative}
+.ticket-body .form-area::before,.ticket-body .form-area::after{content:"";position:absolute;width:22px;height:22px;left:-11px;background:var(--paper);border-radius:50%;z-index:2}
+.ticket-body .form-area::before{top:-11px}.ticket-body .form-area::after{bottom:-11px}
+.ticket-body legend{font-size:19px;margin-bottom:16px}
+.ticket-body fieldset{margin-bottom:27px}
+.ticket-body .session-option{background:transparent;margin:0;border:0;border-top:1px solid var(--line);padding:17px 0;gap:12px}
+.ticket-body .session-option:last-child{border-bottom:1px solid var(--line)}
+.ticket-body .session-option:has(input:disabled){background:transparent;color:var(--muted)}
+.ticket-body .session-option:has(input:checked){background:transparent;border-color:var(--ink)}
+.ticket-body .session-option .option-details{font-size:16px}
+.ticket-body .session-option small{font-size:13px}
+.ticket-body .ticket-row{padding-block:18px}
+.ticket-body .ticket-label{font-size:18px}
+.ticket-body .ticket-row small{font-size:13px}
+.ticket-body .people-line{flex-wrap:wrap;gap:7px 16px;align-items:baseline}
+.ticket-body .people-line #people-limit{width:100%;font-size:13px;color:var(--muted)}
+.ticket-body .mobile-cost{display:block;font-size:29px;line-height:1.2;font-weight:650}
+.ticket-body .ticket-note{font-size:13px;max-width:400px}
+.ticket-body .confirm-list{border-top:0;margin:0 0 25px}
+.ticket-body .confirm-list>div{grid-template-columns:55px minmax(0,1fr);gap:26px;padding-block:16px;border-bottom:1px solid var(--line)}
+.ticket-body .confirm-list>div:last-child{border-bottom:0}
+.ticket-body .confirm-list dt{font-size:14px}.ticket-body .confirm-list dd{font-size:17px}
+.ticket-body .confirm-list .confirm-total{align-items:baseline;border-top:1px dashed var(--muted);margin-top:15px;padding-top:22px}
+.ticket-body .confirm-list .confirm-total dd{font-size:36px;line-height:1.3;font-weight:550}
+.stage-label{font-size:13px;color:var(--muted);margin-bottom:20px}
+.ticket-body .confirm-notice,.ticket-body .result-message{font-size:15px;margin-bottom:22px;line-height:1.9}
+.restore-note{font-size:14px;padding:15px;background:#e1e4d8;margin-bottom:22px}
+@media(min-width:761px) and (max-width:1100px){.venue-print{grid-template-columns:.5fr 1.1fr 1.4fr;gap:24px}.venue-address h2{font-size:30px}.warehouse-drawing{margin-left:0}.ticket-body .ticket-layout{grid-template-columns:minmax(265px,.8fr) minmax(0,1.2fr)}.ticket-identity{padding-inline:25px}.ticket-body .form-area{padding-inline:26px}.identity-top{font-size:12px;gap:10px}.ticket-stub{padding-inline:23px;gap:12px}.ticket-stub .btn{padding-inline:18px}.ticket-body .ticket-label{font-size:16px}}
+@media(max-width:760px){.lineup-poster{padding-top:43px}.lineup-names{gap:25px;padding-block:42px}.lineup-names h3{font-size:clamp(46px,8.7vw,68px)}.lineup-names h3 span{font-size:.34em;margin-left:6px}.poster-caption h2{font-size:20px}.poster-caption p{font-size:13px}.poster-foot{font-size:13px}.venue-print{grid-template-columns:80px 1fr;gap:20px;padding-block:45px}.warehouse-mark{font-size:142px;align-self:center}.venue-address .overline{margin-bottom:12px}.venue-address h2{font-size:31px}.venue-address h2 span{font-size:1.28em}.venue-address>p:last-child{margin-top:13px}.warehouse-drawing{grid-column:1/3;margin:12px 0 0}.warehouse-drawing img{max-height:230px;object-fit:contain}.warehouse-drawing p{text-align:left}.session-print{padding-block:43px}.session-print .poster-caption{align-items:flex-start;flex-direction:column;gap:8px}.date-tickets{grid-template-columns:1fr;gap:20px;margin-top:27px}.date-face{grid-template-columns:auto auto 1fr;padding:20px 22px;gap:10px}.date-number{font-size:99px}.date-month{font-size:13px;padding-top:8px}.date-fixed{grid-column:auto;margin:0;align-self:center;padding-left:8px}.date-fixed h3{font-size:16px}.date-fixed p{font-size:13px;margin-top:8px}.ticket-stub{padding:16px 22px;min-height:78px;gap:15px}.ticket-stub .stamp{font-size:18px}.ticket-stub>p{font-size:13px;max-width:170px}.ticket-stub .btn{min-height:46px;font-size:15px}.ticket-prices{flex-wrap:wrap;gap:8px 25px;margin-top:24px}.ticket-prices p{font-size:16px}.ticket-prices span{margin:0;width:100%;font-size:13px}.ticket-body .ticket-page{padding-top:19px}.ticket-body .page-title{font-size:33px}.ticket-body .step-nav{gap:13px;margin-block:20px 25px}.ticket-body .ticket-layout{grid-template-columns:1fr;gap:0}.ticket-identity{padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:0 15px}.identity-top{grid-column:1/3;font-size:12px}.identity-name{font-size:64px;margin-top:20px;grid-column:1;line-height:1.1}.identity-sub{font-size:15px;grid-column:1;margin-top:10px}.identity-date{margin-top:17px;gap:10px;grid-row:2/4;grid-column:2;align-self:center}.identity-date .date-month{font-size:12px;padding-top:9px}.identity-day{font-size:92px}.identity-session{font-size:15px;grid-column:1/3;margin-top:24px}.identity-venue{font-size:13px;grid-column:1/3;margin-top:4px}.identity-selection,.identity-boundary{display:none}.ticket-body .form-area{border-left:0;border-top:1px dashed var(--ink);padding:28px 24px 30px}.ticket-body .form-area::before,.ticket-body .form-area::after{top:-11px}.ticket-body .form-area::after{right:-11px;left:auto;bottom:auto}.ticket-body .ticket-label{font-size:17px}.ticket-body .confirm-list>div{gap:17px}.ticket-body .confirm-list dd{font-size:16px}.ticket-body .confirm-list .confirm-total dd{font-size:32px}}
+@media(max-width:420px){.lineup-names h3{font-size:46px}.lineup-names h3:nth-child(2){align-self:flex-start}.lineup-names h3:nth-child(3){align-self:flex-end}.poster-foot{font-size:12px}.date-face{column-gap:8px;padding-inline:19px}.date-number{font-size:84px}.date-fixed{padding-left:3px}.date-fixed h3{font-size:15px}.date-fixed p{font-size:12px}.ticket-body .form-area{padding-inline:18px}.ticket-body .ticket-row{gap:8px}.ticket-body .ticket-label{font-size:16px}.ticket-body .session-option .option-details{font-size:15px}.ticket-body .session-option{gap:9px}.ticket-body .state-word{font-size:12px}}
+@media(max-width:760px){.identity-sub{grid-column:1/3}.identity-date{grid-row:2}}
+@media(max-width:360px){.identity-name{font-size:54px;white-space:nowrap}.identity-day{font-size:80px}.identity-date{gap:8px}.identity-session{font-size:14px}}
