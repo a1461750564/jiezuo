@@ -1,0 +1,1765 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-24",
+  "upstream": {
+    "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "revision": "d14efff8ed1faa4187f004f79926f428c8074ec7",
+    "scope": "精选主题与目录组织；独立实现检索，不分发上游数据库/CLI/生成器"
+  },
+  "sources": {
+    "uupmStyle": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/styles.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmProduct": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/products.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmType": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/typography.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmColor": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/colors.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmChart": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/charts.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmIcon": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/icons.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmUX": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/ux-guidelines.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "uupmReact": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/src/ui-ux-pro-max/data/react-performance.csv",
+      "note": "UI UX Pro Max 固定版本的选题依据；条目由界作独立归纳，不导入整个表"
+    },
+    "stack:html-tailwind": {
+      "url": "https://tailwindcss.com/docs",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:react": {
+      "url": "https://react.dev/learn",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:nextjs": {
+      "url": "https://nextjs.org/docs",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:vue": {
+      "url": "https://vuejs.org/guide/introduction.html",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:nuxtjs": {
+      "url": "https://nuxt.com/docs/4.x/getting-started/introduction",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:nuxt-ui": {
+      "url": "https://ui.nuxt.com/docs",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:svelte": {
+      "url": "https://svelte.dev/docs",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:astro": {
+      "url": "https://docs.astro.build/en/concepts/islands/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:angular": {
+      "url": "https://angular.dev/overview",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:laravel": {
+      "url": "https://laravel.com/docs",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:shadcn": {
+      "url": "https://ui.shadcn.com/docs",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:threejs": {
+      "url": "https://threejs.org/docs/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:react-native": {
+      "url": "https://reactnative.dev/docs/getting-started",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:flutter": {
+      "url": "https://docs.flutter.dev/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:swiftui": {
+      "url": "https://developer.apple.com/documentation/swiftui",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:jetpack-compose": {
+      "url": "https://developer.android.com/compose",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:avalonia": {
+      "url": "https://docs.avaloniaui.net/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:javafx": {
+      "url": "https://openjfx.io/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:uno": {
+      "url": "https://platform.uno/docs/articles/intro.html",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:uwp": {
+      "url": "https://learn.microsoft.com/en-us/windows/uwp/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:winui": {
+      "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "stack:wpf": {
+      "url": "https://learn.microsoft.com/en-us/dotnet/desktop/wpf/",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "react-state": {
+      "url": "https://react.dev/learn/choosing-the-state-structure",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "react-effects": {
+      "url": "https://react.dev/learn/you-might-not-need-an-effect",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "react-profiler": {
+      "url": "https://react.dev/reference/react/Profiler",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "react-effect-event": {
+      "url": "https://react.dev/reference/react/useEffectEvent",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "next-app": {
+      "url": "https://nextjs.org/docs/app/getting-started/server-and-client-components",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "next-loading": {
+      "url": "https://nextjs.org/docs/app/api-reference/file-conventions/loading",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "next-pages": {
+      "url": "https://nextjs.org/docs/pages/building-your-application/data-fetching",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "next-cache": {
+      "url": "https://nextjs.org/docs/app/getting-started/caching",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "vue-computed": {
+      "url": "https://vuejs.org/guide/essentials/computed.html",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "vue-watchers": {
+      "url": "https://vuejs.org/guide/essentials/watchers.html",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "nuxt-fetch": {
+      "url": "https://nuxt.com/docs/4.x/getting-started/data-fetching",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "svelte-migration": {
+      "url": "https://svelte.dev/docs/svelte/v5-migration-guide",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "angular-signals": {
+      "url": "https://angular.dev/guide/signals",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "tailwind-upgrade": {
+      "url": "https://tailwindcss.com/docs/upgrade-guide",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "tailwind-v3": {
+      "url": "https://v3.tailwindcss.com/docs/theme",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "shadcn-theme": {
+      "url": "https://ui.shadcn.com/docs/theming",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "shadcn-base": {
+      "url": "https://ui.shadcn.com/docs/components/base/dialog",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "shadcn-radix": {
+      "url": "https://ui.shadcn.com/docs/components/radix/dialog",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "shadcn-aria": {
+      "url": "https://ui.shadcn.com/docs/components/aria/dialog",
+      "note": "官方资料；使用时核对项目版本和实现"
+    },
+    "fonts-noto": {
+      "url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "fonts-serif": {
+      "url": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "fonts-api": {
+      "url": "https://developers.google.com/fonts/docs/css2",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "font-display": {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "carbon-chart": {
+      "url": "https://www.carbondesignsystem.com/building-blocks/data-visualization/overview",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "vega-examples": {
+      "url": "https://vega.github.io/vega-lite/examples/",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "phosphor": {
+      "url": "https://github.com/phosphor-icons/react",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "lucide": {
+      "url": "https://lucide.dev/guide/react",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "w3c-icons": {
+      "url": "https://www.w3.org/WAI/tutorials/images/decorative/",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "w3c-drag": {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "w3c-auth": {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "w3c-entry": {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "w3c-status": {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "spectrum-tokens": {
+      "url": "https://spectrum.adobe.com/page/design-tokens/",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "polaris-variants": {
+      "url": "https://shopify.dev/docs/api/polaris",
+      "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    }
+  },
+  "entries": [
+    {
+      "id": "stack-html-tailwind",
+      "domain": "stack",
+      "title": "HTML / Tailwind 官方实现入口",
+      "keywords": [
+        "html",
+        "tailwind",
+        "css",
+        "响应式",
+        "工具类"
+      ],
+      "guidance": "确认 tailwindcss 版本与既有 CSS 配置；v3 的配置对象与 v4 的 CSS-first theme 分开查。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:html-tailwind"
+      ],
+      "applies_to": {
+        "stack": "html-tailwind",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-react",
+      "domain": "stack",
+      "title": "React 官方实现入口",
+      "keywords": [
+        "react",
+        "hooks",
+        "组件",
+        "状态"
+      ],
+      "guidance": "按项目 react、渲染器与编译配置查状态、Effect 和资源边界；React 版本不等于 Next.js 版本。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:react"
+      ],
+      "applies_to": {
+        "stack": "react",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-nextjs",
+      "domain": "stack",
+      "title": "Next.js 官方实现入口",
+      "keywords": [
+        "nextjs",
+        "next.js",
+        "路由",
+        "缓存"
+      ],
+      "guidance": "确认 next 版本、App/Pages Router 和缓存配置；两个 Router 与不同缓存模型分开查。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:nextjs"
+      ],
+      "applies_to": {
+        "stack": "nextjs",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-vue",
+      "domain": "stack",
+      "title": "Vue 官方实现入口",
+      "keywords": [
+        "vue",
+        "响应式",
+        "计算属性"
+      ],
+      "guidance": "确认 Vue 2/3 与组件 API；派生值、watch 和生命周期以项目对应文档为准。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:vue"
+      ],
+      "applies_to": {
+        "stack": "vue",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-nuxtjs",
+      "domain": "stack",
+      "title": "Nuxt 官方实现入口",
+      "keywords": [
+        "nuxt",
+        "nuxtjs",
+        "ssr",
+        "水合"
+      ],
+      "guidance": "确认 Nuxt 主版本和服务端请求上下文；数据加载、cookie 与运行配置分别查对应接口。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:nuxtjs"
+      ],
+      "applies_to": {
+        "stack": "nuxtjs",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-nuxt-ui",
+      "domain": "stack",
+      "title": "Nuxt UI 官方实现入口",
+      "keywords": [
+        "nuxt ui",
+        "nuxt-ui",
+        "uform",
+        "utable"
+      ],
+      "guidance": "确认 @nuxt/ui 版本、UApp 与已生成主题；不要用旧版 overlay/slot API 猜当前接口。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:nuxt-ui"
+      ],
+      "applies_to": {
+        "stack": "nuxt-ui",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-svelte",
+      "domain": "stack",
+      "title": "Svelte / SvelteKit 官方实现入口",
+      "keywords": [
+        "svelte",
+        "sveltekit",
+        "runes",
+        "符文"
+      ],
+      "guidance": "确认 Svelte 主版本、runes/legacy 模式和 SvelteKit；响应式、事件与路由的数据来源分开查。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:svelte"
+      ],
+      "applies_to": {
+        "stack": "svelte",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-astro",
+      "domain": "stack",
+      "title": "Astro 官方实现入口",
+      "keywords": [
+        "astro",
+        "islands",
+        "孤岛",
+        "水合"
+      ],
+      "guidance": "静态内容与需要客户端交互的岛分开；只为相应对象选择 client 指令，核对项目版本与 adapter。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:astro"
+      ],
+      "applies_to": {
+        "stack": "astro",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-angular",
+      "domain": "stack",
+      "title": "Angular 官方实现入口",
+      "keywords": [
+        "angular",
+        "signals",
+        "signal",
+        "信号"
+      ],
+      "guidance": "确认 Angular 版本、现有组件和表单方式；signal 的派生与副作用分开，不为精修改工程架构。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:angular"
+      ],
+      "applies_to": {
+        "stack": "angular",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-laravel",
+      "domain": "stack",
+      "title": "Laravel 官方实现入口",
+      "keywords": [
+        "laravel",
+        "blade",
+        "livewire",
+        "inertia"
+      ],
+      "guidance": "先辨认 Blade、Livewire 或 Inertia；保留旧输入、错误和服务端授权，避免混用三套提交方式。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:laravel"
+      ],
+      "applies_to": {
+        "stack": "laravel",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-shadcn",
+      "domain": "stack",
+      "title": "shadcn/ui 官方实现入口",
+      "keywords": [
+        "shadcn",
+        "radix",
+        "base ui",
+        "react aria",
+        "field"
+      ],
+      "guidance": "先读已复制的组件和 components.json，辨认底层；CLI 与官网当前代码不代表项目本地组件。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:shadcn"
+      ],
+      "applies_to": {
+        "stack": "shadcn",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-threejs",
+      "domain": "stack",
+      "title": "Three.js 官方实现入口",
+      "keywords": [
+        "three.js",
+        "threejs",
+        "webgl",
+        "3d"
+      ],
+      "guidance": "核对 core/addons 为同一版本，查尺寸、材质、资源释放与输入；图形库不能代替主任务的可达入口。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:threejs"
+      ],
+      "applies_to": {
+        "stack": "threejs",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-react-native",
+      "domain": "stack",
+      "title": "React Native 官方实现入口",
+      "keywords": [
+        "react native",
+        "react-native",
+        "移动原生",
+        "flatlist"
+      ],
+      "guidance": "核对 RN/Expo、平台和列表/键盘行为；Web 的 CSS/ARIA 用法不能原样套到原生控件。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:react-native"
+      ],
+      "applies_to": {
+        "stack": "react-native",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-flutter",
+      "domain": "stack",
+      "title": "Flutter 官方实现入口",
+      "keywords": [
+        "flutter",
+        "dart",
+        "widget",
+        "移动跨平台"
+      ],
+      "guidance": "核对 Flutter/Dart 与平台，查主题、列表惰性构建、资源释放和文本缩放；资料入口不代表实机已验。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:flutter"
+      ],
+      "applies_to": {
+        "stack": "flutter",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-swiftui",
+      "domain": "stack",
+      "title": "SwiftUI 官方实现入口",
+      "keywords": [
+        "swiftui",
+        "ios",
+        "macos",
+        "dynamic type"
+      ],
+      "guidance": "按 deployment target 选择 Observation、导航和焦点 API，检查 Dynamic Type 与减少动态效果。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:swiftui"
+      ],
+      "applies_to": {
+        "stack": "swiftui",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-jetpack-compose",
+      "domain": "stack",
+      "title": "Jetpack Compose 官方实现入口",
+      "keywords": [
+        "compose",
+        "jetpack",
+        "android",
+        "stateflow"
+      ],
+      "guidance": "核对 Compose/BOM 与 Android 目标版本；状态提升、生命周期收集和保存恢复按实际持有者处理。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:jetpack-compose"
+      ],
+      "applies_to": {
+        "stack": "jetpack-compose",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-avalonia",
+      "domain": "stack",
+      "title": "Avalonia 官方实现入口",
+      "keywords": [
+        "avalonia",
+        "axaml",
+        "跨平台桌面"
+      ],
+      "guidance": "核对 Avalonia 版本和主题，区分编译绑定、伪类与 WPF API；按目标平台查菜单、窗口及可访问性。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:avalonia"
+      ],
+      "applies_to": {
+        "stack": "avalonia",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-javafx",
+      "domain": "stack",
+      "title": "JavaFX 官方实现入口",
+      "keywords": [
+        "javafx",
+        "fxml",
+        "tableview",
+        "fx thread"
+      ],
+      "guidance": "按项目 JavaFX/主题版本查绑定、虚拟列表与 FX 线程；保留后台任务取消和失败上下文。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:javafx"
+      ],
+      "applies_to": {
+        "stack": "javafx",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-uno",
+      "domain": "stack",
+      "title": "Uno Platform 官方实现入口",
+      "keywords": [
+        "uno",
+        "unoplatform",
+        "wasm",
+        "winui 跨平台"
+      ],
+      "guidance": "核对 Uno/WinUI API 与目标平台兼容性，区分桌面关闭与移动生命周期，不能假设各平台渲染相同。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:uno"
+      ],
+      "applies_to": {
+        "stack": "uno",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-uwp",
+      "domain": "stack",
+      "title": "UWP 官方实现入口",
+      "keywords": [
+        "uwp",
+        "旧版 windows",
+        "winrt"
+      ],
+      "guidance": "供维护现有 UWP 查 x:Bind、暂停恢复和控件；新项目先核对平台选择，不据入口自动迁移。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:uwp"
+      ],
+      "applies_to": {
+        "stack": "uwp",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-winui",
+      "domain": "stack",
+      "title": "WinUI 3 官方实现入口",
+      "keywords": [
+        "winui",
+        "winui3",
+        "windows app sdk",
+        "mica"
+      ],
+      "guidance": "按 Windows App SDK 查 DispatcherQueue、窗口、主题资源与辅助功能；不能混用 UWP Dispatcher。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:winui"
+      ],
+      "applies_to": {
+        "stack": "winui",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "stack-wpf",
+      "domain": "stack",
+      "title": "WPF 官方实现入口",
+      "keywords": [
+        "wpf",
+        "xaml",
+        "mvvm",
+        "dependencyproperty"
+      ],
+      "guidance": "按 .NET/WPF 查绑定、命令、验证与 DPI；与 WinUI、Avalonia 的样式和资源 API 分开。",
+      "use_when": "项目已经采用该栈，需要确认某个界面 API、配置或平台差异",
+      "avoid_when": "不是换栈建议；只提供入口，不宣称该栈已完成运行或实机验收",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "stack:wpf"
+      ],
+      "applies_to": {
+        "stack": "wpf",
+        "version_note": "官方文档入口；按锁文件/目标平台选择版本，不冻结为全库当前最新版"
+      }
+    },
+    {
+      "id": "react-derived-state",
+      "domain": "implementation",
+      "title": "React：选择、草稿与派生状态",
+      "keywords": [
+        "react",
+        "状态同步",
+        "派生状态",
+        "derived state",
+        "草稿"
+      ],
+      "guidance": "保留权威记录与当前草稿，由它们派生汇总、错误和按钮状态；共享选择放在实际共同持有者，避免再存一份可计算值。",
+      "use_when": "多处反馈不同步、修改后旧错误仍活跃",
+      "avoid_when": "不为此引入新状态库或把远端结果改成本地成功",
+      "reference": "references/forms-and-layers.md#编辑后的状态一起更新",
+      "sources": [
+        "react-state",
+        "uupmReact"
+      ],
+      "applies_to": {
+        "stack": "react",
+        "min_version": "18",
+        "before_version": "20"
+      }
+    },
+    {
+      "id": "react-effect-boundary",
+      "domain": "implementation",
+      "title": "React：Effect 与事件边界",
+      "keywords": [
+        "react",
+        "effect",
+        "副作用",
+        "订阅",
+        "cleanup"
+      ],
+      "guidance": "派生计算留在渲染，用户动作留在事件处理；连接外部系统才用 Effect，并清理订阅、计时器与过期异步结果。",
+      "use_when": "重复请求、旧回调或卸载后的更新",
+      "avoid_when": "不靠删除依赖、额外 Effect 或强制 memo 掩盖状态结构问题",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "react-effects",
+        "uupmReact"
+      ],
+      "applies_to": {
+        "stack": "react",
+        "min_version": "18",
+        "before_version": "20"
+      }
+    },
+    {
+      "id": "react-effect-events",
+      "domain": "implementation",
+      "title": "React：Effect Event 的适用范围",
+      "keywords": [
+        "useeffectevent",
+        "effect event",
+        "最新回调"
+      ],
+      "guidance": "仅将 Effect 内的非响应逻辑拆为 Effect Event；保持真实依赖，不用于点击回调或把返回函数传给其他组件。",
+      "use_when": "订阅回调需要读取最新值，又不该因该值重连",
+      "avoid_when": "低于支持版本、普通事件或想绕开依赖检查时不用",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "react-effect-event",
+        "uupmReact"
+      ],
+      "applies_to": {
+        "stack": "react",
+        "min_version": "19.2",
+        "before_version": "20"
+      }
+    },
+    {
+      "id": "react-performance",
+      "domain": "implementation",
+      "title": "React：先定位渲染与加载瓶颈",
+      "keywords": [
+        "react",
+        "性能",
+        "profiler",
+        "waterfall",
+        "请求瀑布",
+        "memo",
+        "卡顿"
+      ],
+      "guidance": "先区分网络等待、请求瀑布、过多渲染与布局代价；用 Profiler/网络记录定位，再选择减少串行、拆加载边界或复用计算。",
+      "use_when": "已有可复现卡顿、等待或重渲染证据",
+      "avoid_when": "不默认给每个组件加 memo/useCallback，也不在未测量时宣称更快",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "react-profiler",
+        "uupmReact"
+      ],
+      "applies_to": {
+        "stack": "react",
+        "min_version": "18",
+        "before_version": "20"
+      }
+    },
+    {
+      "id": "next-app-boundaries",
+      "domain": "implementation",
+      "title": "Next.js：App Router 的交互与等待边界",
+      "keywords": [
+        "nextjs",
+        "next.js",
+        "app router",
+        "loading",
+        "suspense",
+        "服务端组件"
+      ],
+      "guidance": "只在需要浏览器能力或交互处建立 Client 边界；等待界面跟着实际数据范围，服务端校验、错误与用户输入仍保留。",
+      "use_when": "App Router 页面涉及加载状态或交互拆分",
+      "avoid_when": "不能用于 Pages Router，也不把 Server Action 当免授权接口",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "next-app",
+        "next-loading"
+      ],
+      "applies_to": {
+        "stack": "nextjs",
+        "min_version": "13",
+        "variant": "app-router",
+        "before_version": "17"
+      }
+    },
+    {
+      "id": "next-pages-data",
+      "domain": "implementation",
+      "title": "Next.js：Pages Router 的数据路径",
+      "keywords": [
+        "nextjs",
+        "next.js",
+        "pages router",
+        "数据加载",
+        "ssr"
+      ],
+      "guidance": "沿用项目 getServerSideProps/getStaticProps 与客户端数据层；页面切换时保留查询、选择和错误恢复。",
+      "use_when": "维护 Pages Router 页面",
+      "avoid_when": "不把 app/ 下 loading.tsx、缓存指令或 Server Component 示例直接搬入",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "next-pages"
+      ],
+      "applies_to": {
+        "stack": "nextjs",
+        "variant": "pages-router"
+      }
+    },
+    {
+      "id": "next-cache-model",
+      "domain": "implementation",
+      "title": "Next.js：先确认缓存模型再读回",
+      "keywords": [
+        "nextjs",
+        "next.js",
+        "缓存",
+        "cache",
+        "读回",
+        "revalidate"
+      ],
+      "guidance": "确认是否启用 Cache Components，再查该模型的缓存生命期与失效接口；提交后的读回需要当前结果，不能只刷新外观。",
+      "use_when": "Next 16+ 的缓存或提交后数据显示过期",
+      "avoid_when": "版本符合也不证明已开配置；不要自动启用新缓存模型或跨用户缓存敏感记录",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "next-cache"
+      ],
+      "applies_to": {
+        "stack": "nextjs",
+        "min_version": "16",
+        "variant": "app-router",
+        "before_version": "17"
+      }
+    },
+    {
+      "id": "vue-derived-state",
+      "domain": "implementation",
+      "title": "Vue：computed、watch 与异步结果",
+      "keywords": [
+        "vue",
+        "computed",
+        "watch",
+        "状态同步",
+        "响应式"
+      ],
+      "guidance": "由响应式来源计算展示值，watch 承担外部同步；保留过期请求的取消或身份检查，卸载时清理侦听。",
+      "use_when": "选择与汇总不同步、异步结果覆盖新输入",
+      "avoid_when": "不把所有计算改成 watch；沿用项目现有 Options/Composition API",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "vue-computed",
+        "vue-watchers"
+      ],
+      "applies_to": {
+        "stack": "vue",
+        "min_version": "3",
+        "before_version": "4"
+      }
+    },
+    {
+      "id": "nuxt-fetch-context",
+      "domain": "implementation",
+      "title": "Nuxt：SSR 数据与请求上下文",
+      "keywords": [
+        "nuxt",
+        "nuxtjs",
+        "usefetch",
+        "useasyncdata",
+        "水合",
+        "重复请求"
+      ],
+      "guidance": "区分 SSR 初始数据与事件中的请求，按 useFetch/useAsyncData 和项目约定共享一致的 key、状态与处理方式。",
+      "use_when": "Nuxt 4 页面初始请求重复、加载与错误失配",
+      "avoid_when": "Nuxt 3/其他主版本查对应文档；不能把浏览器 cookie 或共享全局状态直接当服务端用户上下文",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "nuxt-fetch"
+      ],
+      "applies_to": {
+        "stack": "nuxtjs",
+        "min_version": "4",
+        "before_version": "5"
+      }
+    },
+    {
+      "id": "svelte-runes",
+      "domain": "implementation",
+      "title": "Svelte：runes 模式的派生与副作用",
+      "keywords": [
+        "svelte",
+        "runes",
+        "符文",
+        "state",
+        "derived",
+        "派生状态"
+      ],
+      "guidance": "在 runes 模式以 $state 持有状态、$derived 表达派生；$effect 用于外部同步，事件和 props 按该模式组织。",
+      "use_when": "已有 Svelte 5 runes 组件要补交互",
+      "avoid_when": "不混用 legacy 响应式语法；不因局部修改迁移整项目",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "svelte-migration"
+      ],
+      "applies_to": {
+        "stack": "svelte",
+        "min_version": "5",
+        "variant": "runes",
+        "before_version": "6"
+      }
+    },
+    {
+      "id": "svelte-legacy",
+      "domain": "implementation",
+      "title": "Svelte：维护 legacy 组件",
+      "keywords": [
+        "svelte",
+        "legacy",
+        "旧版",
+        "响应式"
+      ],
+      "guidance": "沿用当前 legacy 组件的响应式、事件与 slot 契约；需要迁移时再单独对照官方迁移指南。",
+      "use_when": "Svelte 3/4 或 Svelte 5 legacy 模式维护",
+      "avoid_when": "不要把所有 Svelte 5 项目都当成 runes，也不因此自动运行迁移脚本",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "svelte-migration"
+      ],
+      "applies_to": {
+        "stack": "svelte",
+        "variant": "legacy"
+      }
+    },
+    {
+      "id": "angular-signals",
+      "domain": "implementation",
+      "title": "Angular：signal 的派生与同步",
+      "keywords": [
+        "angular",
+        "signal",
+        "signals",
+        "信号",
+        "状态同步"
+      ],
+      "guidance": "已有 signal 状态以 computed 表达派生；effect 只处理外部同步，沿用现有表单与服务的数据归属。",
+      "use_when": "signal 组件中视图、校验或汇总不一致",
+      "avoid_when": "旧版本或现有 Observable 流程先核对；不为精修强制引入新 Store",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "angular-signals"
+      ],
+      "applies_to": {
+        "stack": "angular",
+        "min_version": "16",
+        "before_version": "23"
+      }
+    },
+    {
+      "id": "tailwind-v4-theme",
+      "domain": "implementation",
+      "title": "Tailwind 4：主题与完整类名",
+      "keywords": [
+        "tailwind",
+        "tailwindcss",
+        "主题",
+        "theme",
+        "类名",
+        "v4"
+      ],
+      "guidance": "沿项目 @theme/CSS 变量定义语义角色，动态选项映射为完整类名；核对构建插件与源文件发现方式。",
+      "use_when": "Tailwind 4 的主题、状态和类名未生成",
+      "avoid_when": "不照搬 v3 content/config，不运行升级命令或覆盖既有构建配置",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "tailwind-upgrade"
+      ],
+      "applies_to": {
+        "stack": "html-tailwind",
+        "min_version": "4",
+        "before_version": "5"
+      }
+    },
+    {
+      "id": "tailwind-v3-theme",
+      "domain": "implementation",
+      "title": "Tailwind 3：保留配置体系",
+      "keywords": [
+        "tailwind",
+        "tailwindcss",
+        "主题",
+        "theme",
+        "类名",
+        "v3"
+      ],
+      "guidance": "沿用 tailwind.config 与项目语义变量，确认 content 扫描范围和完整类名；主题与插件按 v3 文档查。",
+      "use_when": "维护 Tailwind 3",
+      "avoid_when": "不因当前官网采用 v4 就自动改成 @theme 或升级依赖",
+      "reference": "references/tools.md#按项目技术栈查实现资料",
+      "sources": [
+        "tailwind-v3"
+      ],
+      "applies_to": {
+        "stack": "html-tailwind",
+        "min_version": "3",
+        "before_version": "4"
+      }
+    },
+    {
+      "id": "shadcn-base-ui",
+      "domain": "implementation",
+      "title": "shadcn/ui：Base UI 组件分支",
+      "keywords": [
+        "shadcn",
+        "base-ui",
+        "dialog",
+        "field",
+        "表单",
+        "弹窗"
+      ],
+      "guidance": "查本地组件暴露的 render、open 与焦点接口；合并语义元素、事件和 ref 时按当前实现。",
+      "use_when": "项目本地组件确认采用 Base UI",
+      "avoid_when": "不传 Radix 专用 asChild，也不按网页当前代码覆盖已定制组件",
+      "reference": "references/forms-and-layers.md#选择容器",
+      "sources": [
+        "shadcn-base",
+        "shadcn-theme"
+      ],
+      "applies_to": {
+        "stack": "shadcn",
+        "variant": "base-ui"
+      }
+    },
+    {
+      "id": "shadcn-radix",
+      "domain": "implementation",
+      "title": "shadcn/ui：Radix UI 组件分支",
+      "keywords": [
+        "shadcn",
+        "radix",
+        "dialog",
+        "field",
+        "表单",
+        "弹窗"
+      ],
+      "guidance": "在本地组件确实暴露 asChild 时使用组合 API；保留 trigger、标题、退出和焦点返回。",
+      "use_when": "项目本地组件确认采用 Radix UI",
+      "avoid_when": "不把 Base UI 的 render 或 React Aria 的接口混入，也不强制替换已有字段封装",
+      "reference": "references/forms-and-layers.md#选择容器",
+      "sources": [
+        "shadcn-radix",
+        "shadcn-theme"
+      ],
+      "applies_to": {
+        "stack": "shadcn",
+        "variant": "radix"
+      }
+    },
+    {
+      "id": "shadcn-react-aria",
+      "domain": "implementation",
+      "title": "shadcn/ui：React Aria 组件分支",
+      "keywords": [
+        "shadcn",
+        "react-aria",
+        "dialog",
+        "field",
+        "表单",
+        "弹窗"
+      ],
+      "guidance": "先辨认真实 link/button、受控状态与焦点接口；导航保持链接语义，字段错误与当前控件关联。",
+      "use_when": "项目本地组件确认采用 React Aria",
+      "avoid_when": "不将 React Aria 的组件当成 Radix 或 Base UI，也不假定三者 props 相同",
+      "reference": "references/forms-and-layers.md#选择容器",
+      "sources": [
+        "shadcn-aria",
+        "shadcn-theme"
+      ],
+      "applies_to": {
+        "stack": "shadcn",
+        "variant": "react-aria"
+      }
+    },
+    {
+      "id": "task-to-structure",
+      "domain": "workflow",
+      "title": "从对象与判断依据选择结构",
+      "keywords": [
+        "用户任务",
+        "业务对象",
+        "工作区",
+        "队列",
+        "主从",
+        "结构",
+        "workflow"
+      ],
+      "guidance": "按对象、判断依据与高频动作选择队列、表格、主从、日程或画布；产品分类只帮助寻找参考。",
+      "use_when": "结构尚未决定，或字段排列不能支持下一步",
+      "avoid_when": "不从行业画像自动增加审批、权限、业务功能或必填字段",
+      "reference": "references/workspaces.md",
+      "sources": [
+        "uupmProduct"
+      ]
+    },
+    {
+      "id": "landing-evidence",
+      "domain": "workflow",
+      "title": "说服页按证据与动作组织",
+      "keywords": [
+        "说服页",
+        "落地页",
+        "landing",
+        "证据",
+        "首屏",
+        "页面骨架"
+      ],
+      "guidance": "在真实主张、可展示对象、限制与主操作之间安排阅读关系；比较具体版式的取舍，首屏概念延续到关键后续页。",
+      "use_when": "品牌、产品或活动页需要选择内容关系",
+      "avoid_when": "不按行业自动追加倒计时、客户评价或背书，不复制通用模块顺序",
+      "reference": "references/direction-persuasion.md",
+      "sources": [
+        "uupmProduct"
+      ]
+    },
+    {
+      "id": "style-reference",
+      "domain": "style",
+      "title": "把风格名称转为可见关系",
+      "keywords": [
+        "风格",
+        "style",
+        "editorial",
+        "brutalist",
+        "极简",
+        "编辑型",
+        "粗粝"
+      ],
+      "guidance": "风格名只作为找图关键词；拆真实作品的尺度、对齐、材质与操作关系，再按当前内容重组。",
+      "use_when": "方向未定，需要扩大参考而非重复模型默认",
+      "avoid_when": "不直接按行业套 Glassmorphism，不用风格标签代替素材和构图",
+      "reference": "references/design-direction.md",
+      "sources": [
+        "uupmStyle"
+      ]
+    },
+    {
+      "id": "platform-material",
+      "domain": "style",
+      "title": "平台材质与内容层分开",
+      "keywords": [
+        "liquid glass",
+        "material",
+        "fluent",
+        "玻璃",
+        "平台材质"
+      ],
+      "guidance": "系统材质先用于对应平台的导航与控件；内容阅读层仍需清晰层级、对比与减少透明度的替代。",
+      "use_when": "已有平台设计系统或获准材质方向",
+      "avoid_when": "不把 Apple 平台材质当成所有网页的视觉模板，也不因此增加实时模糊",
+      "reference": "references/visual-language.md",
+      "sources": [
+        "uupmStyle"
+      ]
+    },
+    {
+      "id": "type-chinese-ui",
+      "domain": "typography",
+      "title": "中文业务界面字体搭配",
+      "keywords": [
+        "字体",
+        "中文",
+        "中英混排",
+        "sans",
+        "无衬线",
+        "noto sans",
+        "source sans"
+      ],
+      "guidance": "从现有中文无衬线与拉丁字形的重量、基线试排；先读两组搭配起点，数字另核对宽度。",
+      "use_when": "中文表单、数据或高频工具没有锁定新字体",
+      "avoid_when": "不把字体名称视为已加载，也不为试排下载文件或接 CDN",
+      "reference": "references/visual-language.md#中文字体搭配起点",
+      "sources": [
+        "uupmType",
+        "fonts-noto"
+      ]
+    },
+    {
+      "id": "type-editorial",
+      "domain": "typography",
+      "title": "中文编辑阅读与拉丁展示字",
+      "keywords": [
+        "衬线",
+        "serif",
+        "文化",
+        "阅读",
+        "instrument",
+        "noto serif",
+        "展示字"
+      ],
+      "guidance": "中文编辑标题可试中文衬线，操作和密集数据保持易扫读；Instrument Serif 只承担已有拉丁展示用途。",
+      "use_when": "内容与品牌允许编辑型字阶",
+      "avoid_when": "不能让不含中文的字体承担中文正文，不把展示字铺满工具界面",
+      "reference": "references/visual-language.md#中文字体搭配起点",
+      "sources": [
+        "uupmType",
+        "fonts-serif"
+      ]
+    },
+    {
+      "id": "type-font-loading",
+      "domain": "typography",
+      "title": "字重、子集与加载回退",
+      "keywords": [
+        "字体加载",
+        "font loading",
+        "variable font",
+        "可变字体",
+        "字重",
+        "子集",
+        "font-display"
+      ],
+      "guidance": "核对文件实际字重、中文子集和许可；按项目资源方式选择变量字体或必要字重，观察回退后的宽度与布局变化。",
+      "use_when": "字体请求较重、回退导致跳动或需要选择导入方式",
+      "avoid_when": "不因目录列有字体就默认可离线使用；不下载整库或宣称已有许可文件",
+      "reference": "references/visual-language.md",
+      "sources": [
+        "fonts-api",
+        "font-display",
+        "uupmType"
+      ]
+    },
+    {
+      "id": "type-numeric",
+      "domain": "typography",
+      "title": "数字、金额与等宽对齐",
+      "keywords": [
+        "数字",
+        "金额",
+        "tabular",
+        "monospace",
+        "等宽"
+      ],
+      "guidance": "连续比较的数值先试 tabular-nums 与小数位对齐；标识/代码确需定宽时再选等宽族，普通中文仍按可读性排。",
+      "use_when": "表格、价格、计时和会变化的数字",
+      "avoid_when": "不把全页正文改成等宽，也不假定每个字体都有等宽数字特性",
+      "reference": "references/visual-language.md",
+      "sources": [
+        "uupmType"
+      ]
+    },
+    {
+      "id": "color-semantic",
+      "domain": "color",
+      "title": "浅深色的语义角色",
+      "keywords": [
+        "配色",
+        "颜色",
+        "color",
+        "palette",
+        "深色",
+        "浅色",
+        "语义"
+      ],
+      "guidance": "从页面、表面、文字、动作、选中、错误和焦点的成对关系试配；沿用已有品牌，按实际背景检查。",
+      "use_when": "主题或组件状态没有统一角色",
+      "avoid_when": "不自动套行业主色，不把一套色值当作整页可访问性证明",
+      "reference": "references/visual-language.md#浅色与深色的语义配色样例",
+      "sources": [
+        "uupmColor"
+      ]
+    },
+    {
+      "id": "color-content",
+      "domain": "color",
+      "title": "从内容和品牌扩大色彩候选",
+      "keywords": [
+        "配色",
+        "强调色",
+        "暖色",
+        "冷色",
+        "单色",
+        "双色",
+        "品牌",
+        "color"
+      ],
+      "guidance": "比较内容取色、中性底加品牌强调、单/双色体系等候选；由内容与使用场景解释选择，再派生选中、边界和禁用态。",
+      "use_when": "没有现成品牌色，需要扩大试配范围",
+      "avoid_when": "不把金融固定成蓝、医疗固定成绿，也不让错误/成功随装饰色改变含义",
+      "reference": "references/design-direction.md#定色彩",
+      "sources": [
+        "uupmColor",
+        "uupmStyle"
+      ]
+    },
+    {
+      "id": "icons-library",
+      "domain": "icons",
+      "title": "成熟图标库与实际导入",
+      "keywords": [
+        "图标",
+        "icons",
+        "lucide",
+        "phosphor",
+        "svg",
+        "import"
+      ],
+      "guidance": "复用项目现有 Lucide、Phosphor 或同一套图标，核对实际包版本、名称、导出及 SSR 分支；统一笔画和光学尺寸。",
+      "use_when": "通用动作图标需要选择或导入",
+      "avoid_when": "不同时引入多个同用途图标库，不假定目录中的名称在项目版本存在",
+      "reference": "references/visual-language.md#控件与图标",
+      "sources": [
+        "uupmIcon",
+        "phosphor",
+        "lucide"
+      ]
+    },
+    {
+      "id": "icons-semantics",
+      "domain": "icons",
+      "title": "图标语义由当前用途决定",
+      "keywords": [
+        "图标",
+        "装饰",
+        "aria",
+        "可访问名称",
+        "icon semantics"
+      ],
+      "guidance": "同一图标可装饰、传信息或触发操作：装饰不重复播报，动作给可访问名称，状态不只靠图形颜色。",
+      "use_when": "图标按钮、状态和可点击标签",
+      "avoid_when": "不把目录默认语义当作固定角色，不给每个标题加图标补空白",
+      "reference": "references/interaction-and-state.md#电脑手机与键盘",
+      "sources": [
+        "uupmIcon",
+        "w3c-icons"
+      ]
+    },
+    {
+      "id": "chart-trend",
+      "domain": "chart",
+      "title": "时间变化",
+      "keywords": [
+        "趋势",
+        "折线",
+        "line chart",
+        "时间序列"
+      ],
+      "guidance": "比较同一口径的时间点；保留真实时间间隔、缺测与零值区别",
+      "use_when": "同一指标的时间变化",
+      "avoid_when": "单个时点或未经记录的中间变化",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-comparison",
+      "domain": "chart",
+      "title": "类别比较",
+      "keywords": [
+        "条形",
+        "bar chart",
+        "类别比较",
+        "排名"
+      ],
+      "guidance": "用可比较长度表达类别差异，排序服务问题；长名称可横排",
+      "use_when": "同单位类别数值比较",
+      "avoid_when": "有固定语义顺序时不强行按值排序，精确追查可用表格",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-composition",
+      "domain": "chart",
+      "title": "部分与整体",
+      "keywords": [
+        "构成",
+        "饼图",
+        "环形",
+        "pie",
+        "donut",
+        "堆叠"
+      ],
+      "guidance": "先核对同一整体、分母与可加总；跨组可比较堆叠，少量单组才考虑饼/环",
+      "use_when": "真实、非负、无重叠的组成",
+      "avoid_when": "分母不同、类别重叠或细小切片难辨时改表格/条形",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-distribution",
+      "domain": "chart",
+      "title": "分布与异常",
+      "keywords": [
+        "分布",
+        "直方图",
+        "箱线",
+        "histogram",
+        "boxplot"
+      ],
+      "guidance": "原始观测可分箱；已掌握分位数时可画箱线，标出统计与异常定义",
+      "use_when": "需要看集中程度、离散与异常",
+      "avoid_when": "不能从均值或总数编出分布，不把样本数经验当硬门槛",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-relationship",
+      "domain": "chart",
+      "title": "变量关系",
+      "keywords": [
+        "散点",
+        "scatter",
+        "变量关系",
+        "相关"
+      ],
+      "guidance": "用同一对象成对观测，说明轴单位、缺失和数据来源",
+      "use_when": "比较变量关系或异常对象",
+      "avoid_when": "不从类别汇总推个体关系，也不把相关说成因果",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-funnel",
+      "domain": "chart",
+      "title": "阶段转化",
+      "keywords": [
+        "漏斗",
+        "funnel",
+        "流失",
+        "转化"
+      ],
+      "guidance": "核对同批对象、阶段顺序和时间窗；标数量及比例分母",
+      "use_when": "有明确顺序的过程流失",
+      "avoid_when": "当前状态分布或分支流程不能伪装成转化率",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-waterfall",
+      "domain": "chart",
+      "title": "增减如何形成总量",
+      "keywords": [
+        "瀑布图",
+        "waterfall",
+        "收支",
+        "总量",
+        "增减"
+      ],
+      "guidance": "展示起点、可加总的正负贡献与终点，保留单位和对账关系",
+      "use_when": "解释余额、收入或成本的组成变化",
+      "avoid_when": "不用于不可加总指标；缺项照实说明，不为闭合补数字",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "vega-examples"
+      ]
+    },
+    {
+      "id": "chart-flow",
+      "domain": "chart",
+      "title": "流量如何跨节点分配",
+      "keywords": [
+        "桑基",
+        "sankey",
+        "alluvial",
+        "流量",
+        "流向"
+      ],
+      "guidance": "节点、边与权重必须有来源；带文字或表格等价，允许按路径读明细",
+      "use_when": "用户需要理解来源到去向的数量分配",
+      "avoid_when": "普通依赖图没有数量时用关系图；不从节点数编边权",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-hierarchy",
+      "domain": "chart",
+      "title": "层级占比与大小",
+      "keywords": [
+        "树图",
+        "treemap",
+        "层级占比"
+      ],
+      "guidance": "用真实父子层级及非负可加总值；小块提供可达明细入口",
+      "use_when": "空间有限但要看层级组成",
+      "avoid_when": "若核心任务是精确比较，用分组条形或表格，不靠面积装饰",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-target",
+      "domain": "chart",
+      "title": "实际值与目标",
+      "keywords": [
+        "子弹图",
+        "bullet",
+        "目标",
+        "阈值",
+        "达成"
+      ],
+      "guidance": "实际、目标与阈值分别标明来源；缺少目标就仅展示已有数值",
+      "use_when": "同一指标需要和真实目标/区间比较",
+      "avoid_when": "没有阈值依据时不编红黄绿区间，不为单值强造仪表盘",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "chart-heatmap",
+      "domain": "chart",
+      "title": "二维密度或强度",
+      "keywords": [
+        "热力图",
+        "heatmap",
+        "矩阵",
+        "强度"
+      ],
+      "guidance": "行列语义、单位和色标明确；缺失与零不同，可定位读取单元格值",
+      "use_when": "有真实二维观测或汇总矩阵",
+      "avoid_when": "不单靠颜色传精确值，也不把稀疏数据填满制造规律",
+      "reference": "references/workspaces.md#分析与监控中的图表选型",
+      "sources": [
+        "uupmChart",
+        "carbon-chart"
+      ]
+    },
+    {
+      "id": "drag-alternative",
+      "domain": "interaction",
+      "title": "拖拽的非拖拽入口",
+      "keywords": [
+        "拖拽",
+        "排序",
+        "drag",
+        "resize",
+        "调整大小"
+      ],
+      "guidance": "拖拽之外考虑点击/点选移动、按钮或菜单等单指针替代，并保留键盘路径；沿用实际状态与权限。",
+      "use_when": "看板、重排或可调面板使用拖拽",
+      "avoid_when": "只有键盘替代不自动证明单指针无需拖拽；也不强制为本质依赖轨迹的工具造无意义替代",
+      "reference": "references/interaction-and-state.md",
+      "sources": [
+        "uupmUX",
+        "w3c-drag"
+      ]
+    },
+    {
+      "id": "auth-access",
+      "domain": "interaction",
+      "title": "认证输入的可达性",
+      "keywords": [
+        "认证",
+        "登录",
+        "密码",
+        "验证码",
+        "authentication",
+        "password"
+      ],
+      "guidance": "核对粘贴、密码管理器与已有认证入口；不要在 UI 层额外要求记忆或转抄，无法操作时保留实际替代路径。",
+      "use_when": "本次确实涉及登录或验证码界面",
+      "avoid_when": "不自行新增 OAuth/passkey、改变身份协议或宣称已符合全部 WCAG",
+      "reference": "references/interaction-and-state.md",
+      "sources": [
+        "uupmUX",
+        "w3c-auth"
+      ]
+    },
+    {
+      "id": "redundant-entry",
+      "domain": "interaction",
+      "title": "跨步骤复用已填信息",
+      "keywords": [
+        "重复输入",
+        "地址",
+        "redundant entry",
+        "表单步骤"
+      ],
+      "guidance": "同一流程已有信息可按授权预填或选择复用；用户可核对与更正，保留业务要求的重新确认。",
+      "use_when": "多步骤重复要求同一对象信息",
+      "avoid_when": "不跨账户复用私密内容，也不删业务确实需要重新验证的输入",
+      "reference": "references/interaction-and-state.md",
+      "sources": [
+        "uupmUX",
+        "w3c-entry"
+      ]
+    },
+    {
+      "id": "live-context",
+      "domain": "interaction",
+      "title": "状态更新连同对象播报",
+      "keywords": [
+        "播报",
+        "aria-live",
+        "badge",
+        "计数",
+        "live region"
+      ],
+      "guidance": "用一条合适状态消息交代对象和变化，避免只播裸数字；并发提示不互相打断，紧急程度按实际后果。",
+      "use_when": "购物车数量、异步结果和动态状态变化",
+      "avoid_when": "不让每个标签都变成强制告警，也不借此加入无信息增量的可见说明",
+      "reference": "references/interaction-and-state.md",
+      "sources": [
+        "uupmUX",
+        "w3c-status"
+      ]
+    },
+    {
+      "id": "tokens-layers",
+      "domain": "implementation",
+      "title": "基础值、语义角色与组件 token",
+      "keywords": [
+        "tokens",
+        "design tokens",
+        "语义变量",
+        "设计系统",
+        "圆角",
+        "主题"
+      ],
+      "guidance": "区分基础值、用途角色与组件状态；映射到项目现有变量，必要时只补缺少的角色，不另建一套规范。",
+      "use_when": "同义状态颜色不一，或控件参数散落",
+      "avoid_when": "不运行设计系统生成器覆盖项目 DESIGN.md，也不把示例色值当品牌决定",
+      "reference": "references/existing-project.md",
+      "sources": [
+        "spectrum-tokens",
+        "uupmColor"
+      ]
+    },
+    {
+      "id": "component-variants",
+      "domain": "implementation",
+      "title": "组件变体与状态分工",
+      "keywords": [
+        "组件",
+        "component",
+        "variants",
+        "变体",
+        "按钮",
+        "表单",
+        "状态"
+      ],
+      "guidance": "把用途、尺寸、状态和内容槽分开看；选现有组件能表达的组合，业务结果仍由真实状态决定。",
+      "use_when": "同类控件出现多套一次性写法",
+      "avoid_when": "不强制固定圆角、阴影、hover 上浮或所有卡片可点击",
+      "reference": "references/component-polish.md",
+      "sources": [
+        "polaris-variants",
+        "shadcn-theme"
+      ]
+    }
+  ]
+}

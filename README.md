@@ -91,6 +91,7 @@ $jiezuo
 | `scripts/shoot.mjs` | Node 22+，现有 Chrome / Chromium / Edge；截图、交互步骤、布局与可读性提示 |
 | `scripts/build_explorer.py` | Python 3.10+ 标准库；将候选页面或图片组装为风格对比页 |
 | `scripts/curate-media.mjs` | Node 22+、网络访问；检索素材、保留来源及权利说明 |
+| `scripts/find_reference.py` | Python 3.10+ 标准库；离线检索精选设计/实现参考，带版本及分支适用性，不联网或安装依赖 |
 | 可选视频与素材处理 | `ffmpeg` / `ffprobe`；缺失时相应输出受限，不视为完整验证 |
 
 例如从仓库根目录检查一个已经运行的本地页面，证据写到任务自己的目录：
@@ -101,6 +102,8 @@ node scripts/shoot.mjs http://127.0.0.1:3000 \
 ```
 
 带提交操作前先判断写入与重放风险；`--evidence` 等组合可能执行步骤多次。详见 [工具说明](references/tools.md) 和脚本 `--help`。高像素密度截图不等于真实浏览器 200% 缩放。
+
+参考不够时可以按问题查资料，例如 `python3 scripts/find_reference.py "状态同步" --stack react --version 18`。目录有 68 条精选卡、22 栈官方入口，具体覆盖见 [按需检索](references/tools.md#按需检索设计与实现资料)。它不生成设计系统、不代替业务理解或实际验证；其他平台的入口不代表已完成平台验收。
 
 ## 从示范学习
 

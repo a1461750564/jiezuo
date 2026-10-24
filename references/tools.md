@@ -89,17 +89,36 @@ node <skill>/scripts/curate-media.mjs fetch T2 --maps all --resolution 1k --dir 
 `functionalText` 也检查普通可见数据短句；读屏专用的微小裁切标签只从视觉检查排除，数量见 `visuallyHiddenTextSkipped`，语义检查仍保留。不要用sr-only类名遮蔽真实可见问题。
 
 
+## 按需检索设计与实现资料
+
+已有参考不足以选型或确认 API 时再查。`find_reference.py` 用 Python 3.10+ 标准库只读精选目录，不联网、不写缓存、不安装依赖；默认只返回 4 条。不用打开整份 JSON：
+
+```text
+python3 <skill>/scripts/find_reference.py "中文阅读 字体" --domain typography
+python3 <skill>/scripts/find_reference.py "瀑布图 增减" --domain chart
+python3 <skill>/scripts/find_reference.py "状态同步" --stack react --version 18
+python3 <skill>/scripts/find_reference.py "缓存 读回" --stack nextjs --version 14 --variant app-router
+python3 <skill>/scripts/find_reference.py "弹窗" --stack shadcn --variant base-ui
+python3 <skill>/scripts/find_reference.py --list
+```
+
+`--domain` 限定 `workflow/style/typography/color/icons/chart/interaction/implementation/stack`；`--list` 列实际范围，`--json` 给结构化结果，`--limit` 可选 1–10。中文/英文关键词由精选条目维护，排序只是文本相关性，不是审美分、置信度或业务判断。没有命中就说明范围并查相关官方资料，不生成默认风格或模板。
+
+每条给出用途、不适用条件、本地参考路径、官方/固定版本来源及适用性。缺版本或 Router/组件底层时标 `needs-context`；只提供文档入口的栈标 `check-project-docs`；`within-curated-scope` 只表示符合目录声明，不证明已运行、API 全部兼容或性能更好。目录日期是维护快照，不代表远端文档一直未变。
+
+只知道大版本、而某条 API 从小版本才可用时，会要求 `version-precision`，不把 `19` 猜成 `19.0.0` 或最新 `19.x`。预发布版本与依赖范围不作数值判断，直接查项目对应文档。
+
+查中后只读当前问题相关内容，沿用实际项目的品牌、tokens、组件、接口与状态。目录是参考卡，不是额外流程或必做检查表。数据与来源集中在 `reference-catalog.json`；维护时核对官方原文与版本，只改相关条目，不自动拉取上游整库。
+
 ## 按项目技术栈查实现资料
 
-先看项目配置、锁文件和已有组件确认实际技术栈与版本，只读当前问题用得上的官方资料；下表是索引，不是新流程，也不要求换栈或安装组件。旧版本、Pages Router 与不同组件底层的 API 以对应文档为准。
+先看项目配置、锁文件和已复制组件，确认版本属于哪个包；`--version` 必须同时指定 `--stack`，不会把 Next 的版本当成 React 的版本。`--variant` 可区分 `app-router/pages-router`、`radix/base-ui/react-aria` 和 `runes/legacy`；未辨认时不把候选 API 当成可直接采用的实现。
 
-| 项目已有 | 遇到的问题 | 官方入口与使用边界 |
-| --- | --- | --- |
-| React | 多处选择不同步、派生值过期、状态互相矛盾 | [状态结构](https://react.dev/learn/choosing-the-state-structure)、[共享状态](https://react.dev/learn/sharing-state-between-components)：从同一数据来源派生结果，按实际需要共享；不为界面精修重写项目状态管理 |
-| Next.js App Router | 客户端交互边界、路由内容加载期间怎么显示 | [服务端与客户端组件](https://nextjs.org/docs/app/getting-started/server-and-client-components)、[loading 与流式呈现](https://nextjs.org/docs/app/api-reference/file-conventions/loading)：只在需要交互或浏览器能力处设边界，按真实等待范围呈现状态；保留项目接口、权限与提交方式 |
-| shadcn/ui | 语义颜色对不齐、字段错误关联、弹窗语义 | [主题](https://ui.shadcn.com/docs/theming)、[Field](https://ui.shadcn.com/docs/components/field)、[Dialog](https://ui.shadcn.com/docs/components/dialog)：先辨认项目的 Base UI / Radix 实现与已复制代码，再查对应分支；复用现有表单和组件，不照当前网站示例整体覆盖 |
+常用 Web 详解覆盖 React 状态/Effect/性能、Next App/Pages 与缓存模型、Vue、Nuxt 4、Svelte runes/legacy、Angular signal、Tailwind 3/4、shadcn 三种底层，以及 token/组件状态分工。版本不符的专属条目被排除；未知版本不猜，旧项目仍按对应文档与本地代码工作，不为查资料换栈、升级或重建组件。
 
-索引的选题参考 UI UX Pro Max 的 React、Next.js 与 shadcn 资料；文字独立压缩，具体用法回到官方文档和项目契约，来源与许可见 [第三方说明](../THIRD_PARTY_NOTICES.md#ui-ux-pro-max)。
+另提供 22 栈官方入口：HTML/Tailwind、React、Next.js、Vue、Nuxt、Nuxt UI、Svelte、Astro、Angular、Laravel、shadcn、Three.js、React Native、Flutter、SwiftUI、Compose、Avalonia、JavaFX、Uno、UWP、WinUI、WPF。后者的入口不等于完整本地规则库；原生 App/桌面资料也不扩大界作现有实机验证范围。只有入口不足时才打开相应版本的官方文档。
+
+选题和检索组织借鉴 UI UX Pro Max，条目与脚本独立实现；不分发其 CSV 库、生成器或附带 Skill。来源、固定版本与 MIT 许可见 [第三方说明](../THIRD_PARTY_NOTICES.md#ui-ux-pro-max)。
 
 ## 可选的设计规范比对
 
