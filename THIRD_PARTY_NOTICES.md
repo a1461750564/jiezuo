@@ -41,3 +41,35 @@ Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrume
 The TodoMVC teaching baseline comes from [tastejs/todomvc](https://github.com/tastejs/todomvc/tree/ff43b02e59dfa604386bb382034b2cd07c2bcd8a/examples/javascript-es5). Copyright (c) Addy Osmani, Sindre Sorhus, Pascal Hartig, Stephen Sawchuk. MIT license: [TodoMVC LICENSE](assets/cases/todomvc/LICENSE). Local adaptations are documented in [SOURCE.json](assets/cases/todomvc/SOURCE.json).
 
 The embedded Underscore template code retains its MIT notice, copyright (c) 2009–2022 Jeremy Ashkenas, Julian Gonggrijp, and DocumentCloud and Investigative Reporters & Editors. Full text: [UNDERSCORE-LICENSE](assets/cases/todomvc/UNDERSCORE-LICENSE).
+
+## UI UX Pro Max
+
+Copyright (c) 2024 Next Level Builder. Source: [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/d14efff8ed1faa4187f004f79926f428c8074ec7), pinned revision `d14efff8ed1faa4187f004f79926f428c8074ec7`.
+
+MIT. Adapted selected material from `src/ui-ux-pro-max/data/typography.csv`, `colors.csv`, `charts.csv`, and `stacks/{react,nextjs,shadcn}.csv` into `references/visual-language.md`, `references/workspaces.md`, and `references/tools.md`. Changes: two Chinese-oriented font recipes (including an independently selected simplified-Chinese serif), light/dark semantic color examples with adjusted action and boundary colors, six question-led chart choices, and a small official-documentation index. Fixed data-volume thresholds, universal styling prescriptions and library-installation recommendations were omitted. No upstream CSV database, CLI, search engine, code examples or additional font files are bundled. Font names and documentation links do not grant rights to third-party font binaries; their own licenses apply if acquired separately.
+
+Upstream [MIT license](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/LICENSE), retained in full:
+
+```text
+MIT License
+
+Copyright (c) 2024 Next Level Builder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

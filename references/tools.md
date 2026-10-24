@@ -89,6 +89,18 @@ node <skill>/scripts/curate-media.mjs fetch T2 --maps all --resolution 1k --dir 
 `functionalText` 也检查普通可见数据短句；读屏专用的微小裁切标签只从视觉检查排除，数量见 `visuallyHiddenTextSkipped`，语义检查仍保留。不要用sr-only类名遮蔽真实可见问题。
 
 
+## 按项目技术栈查实现资料
+
+先看项目配置、锁文件和已有组件确认实际技术栈与版本，只读当前问题用得上的官方资料；下表是索引，不是新流程，也不要求换栈或安装组件。旧版本、Pages Router 与不同组件底层的 API 以对应文档为准。
+
+| 项目已有 | 遇到的问题 | 官方入口与使用边界 |
+| --- | --- | --- |
+| React | 多处选择不同步、派生值过期、状态互相矛盾 | [状态结构](https://react.dev/learn/choosing-the-state-structure)、[共享状态](https://react.dev/learn/sharing-state-between-components)：从同一数据来源派生结果，按实际需要共享；不为界面精修重写项目状态管理 |
+| Next.js App Router | 客户端交互边界、路由内容加载期间怎么显示 | [服务端与客户端组件](https://nextjs.org/docs/app/getting-started/server-and-client-components)、[loading 与流式呈现](https://nextjs.org/docs/app/api-reference/file-conventions/loading)：只在需要交互或浏览器能力处设边界，按真实等待范围呈现状态；保留项目接口、权限与提交方式 |
+| shadcn/ui | 语义颜色对不齐、字段错误关联、弹窗语义 | [主题](https://ui.shadcn.com/docs/theming)、[Field](https://ui.shadcn.com/docs/components/field)、[Dialog](https://ui.shadcn.com/docs/components/dialog)：先辨认项目的 Base UI / Radix 实现与已复制代码，再查对应分支；复用现有表单和组件，不照当前网站示例整体覆盖 |
+
+索引的选题参考 UI UX Pro Max 的 React、Next.js 与 shadcn 资料；文字独立压缩，具体用法回到官方文档和项目契约，来源与许可见 [第三方说明](../THIRD_PARTY_NOTICES.md#ui-ux-pro-max)。
+
 ## 可选的设计规范比对
 
 `node scripts/shoot.mjs page.html --design /项目/DESIGN.md --out shots` 只报不拦。规范正文不作猜测；显式声明允许值，例如：
