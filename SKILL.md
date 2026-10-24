@@ -65,6 +65,8 @@ metadata:
 | 主要任务、加载/空/错误/权限/部分失败、电脑/手机与键盘 | [交互与状态](references/interaction-and-state.md) |
 | 输入校验、异步检查、失败恢复、待核实查单、草稿、弹窗与浮层 | [表单与浮层](references/forms-and-layers.md)；混合结果恢复先读 [恢复 CASE](assets/cases/worked-examples/recovery/CASE.md) |
 | 队列、表格、主从、看板、日程、编辑器、画布、图关系、监控或检索分析 | [工作区选型](references/workspaces.md)；队列定位/详情先读 [队列 CASE](assets/cases/worked-examples/queue/CASE.md) |
+| 趋势、类别比较、构成、分布、变量关系或阶段转化的图表选型 | 组织数据呈现前，按当前问题读 [图表选型](references/workspaces.md#分析与监控中的图表选型) 的对应类型，核对数据前提与替代呈现 |
+| React、Next.js 或 shadcn 项目中的状态同步、加载呈现、字段或弹窗实现 | 制作相关交互前，确认项目技术栈与版本，按需读 [技术栈资料索引](references/tools.md#按项目技术栈查实现资料) 对应条目及官方资料，不通读其他技术栈 |
 | 图从哪来、承担什么：选素材、生成配图与写提示词、让图和页面接成一体、实时 3D 与视频 | [素材](references/media.md) |
 | 操作反馈与空间连续性、动效手感、界面过渡、首屏动画、时长与检查 | [动效](references/motion.md) |
 | 小游戏、抽奖、计时养成和强手感操控 | [游玩](references/play.md)（含素材与渲染，按其中链接读素材） |
