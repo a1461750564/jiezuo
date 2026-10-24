@@ -16,8 +16,8 @@ main{max-width:1184px;padding:0 32px;margin:auto}.intro{padding:32px 0 28px}.eye
 </style>
 </head>
 <body>
-<header class="site-header"><b class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>榆岚巡检</b><span class="header-note">交接中的现场</span></header>
-<main><div class="intro"><p class="eyebrow">当班交接</p><h1>当班设施</h1><p>查看观察与核实状态，再接着处理。</p></div>
+<header class="site-header"><b class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>榆岚巡检</b></header>
+<main><div class="intro"><p class="eyebrow">当班交接</p><h1>当班设施</h1></div>
 <div class="queue-toolbar"><div class="queue-heading"><h2 id="queue-title">现场记录</h2><span id="result-count" class="result-count" aria-live="polite">4 条设施</span></div><div class="filter-group"><span class="filter-caption" aria-hidden="true">核实状态</span><label class="sr-only" for="filter">核实状态</label><select id="filter" name="status"><option value="all">全部设施</option><option value="pending">待复核</option><option value="done">已完成</option></select></div></div>
 <section id="queue" aria-labelledby="queue-title"><div class="column-head" aria-hidden="true"><span>设施 / 编号</span><span>经办人</span><span>具体观察</span><span>核实状态</span><span>查看</span></div>
 <article data-record="YL-203" data-state="pending" aria-labelledby="name-YL-203">
@@ -60,7 +60,7 @@ function restoreFilter(){const v=new URL(location.href).searchParams.get('status
 f.addEventListener('change',()=>{const u=new URL(location.href);f.value==='all'?u.searchParams.delete('status'):u.searchParams.set('status',f.value);history.replaceState(null,'',u);applyFilter()});
 window.addEventListener('popstate',restoreFilter);restoreFilter();
 function element(tag,text,className){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node}
-document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>{origin=button;const r=records.find(record=>record.id===button.dataset.open);document.querySelector('#detail-id').textContent=r.id;document.querySelector('#detail-title').textContent=r.name;const meta=element('dl',undefined,'detail-meta');const owner=element('div');owner.append(element('dt','经办人'),element('dd',r.owner));const state=element('div');state.append(element('dt','核实状态'),element('dd',r.state));meta.append(owner,state);const observation=element('section',undefined,'detail-section');observation.append(element('h3','具体观察'),element('p',r.note));const next=element('section',undefined,'detail-section next-step');next.append(element('h3','下一步'),element('p','下一步核对原位与上次记录'));document.querySelector('#detail').replaceChildren(meta,observation,next);d.showModal();d.scrollTop=0;document.querySelector('#detail-title').focus()}));
+document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>{origin=button;const r=records.find(record=>record.id===button.dataset.open);document.querySelector('#detail-id').textContent=r.id;document.querySelector('#detail-title').textContent=r.name;const meta=element('dl',undefined,'detail-meta');const owner=element('div');owner.append(element('dt','经办人'),element('dd',r.owner));const state=element('div');state.append(element('dt','核实状态'),element('dd',r.state));meta.append(owner,state);const observation=element('section',undefined,'detail-section');observation.append(element('h3','具体观察'),element('p',r.note));document.querySelector('#detail').replaceChildren(meta,observation);d.showModal();d.scrollTop=0;document.querySelector('#detail-title').focus()}));
 document.querySelector('#close').addEventListener('click',()=>d.close());
 d.addEventListener('close',()=>origin?.focus({preventScroll:true}));
 </script>
