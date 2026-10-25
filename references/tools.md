@@ -91,7 +91,7 @@ node <skill>/scripts/curate-media.mjs fetch T2 --maps all --resolution 1k --dir 
 
 ## 按需检索设计与实现资料
 
-已有参考不足以选型或确认 API 时再查。`find_reference.py` 用 Python 3.10+ 标准库只读精选目录，不联网、不写缓存、不安装依赖；默认只返回 4 条。不用打开整份 JSON：
+已有参考不足以作设计或实现取舍时再查；已有合适依据则直接沿用。`find_reference.py` 用 Python 3.10+ 标准库只读精选目录，不联网、不写缓存、不安装依赖；默认只返回 4 条。不用打开整份 JSON：
 
 ```text
 python3 <skill>/scripts/find_reference.py "中文阅读 字体" --domain typography
