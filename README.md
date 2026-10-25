@@ -103,7 +103,7 @@ node scripts/shoot.mjs http://127.0.0.1:3000 \
 
 带提交操作前先判断写入与重放风险；`--evidence` 等组合可能执行步骤多次。详见 [工具说明](references/tools.md) 和脚本 `--help`。高像素密度截图不等于真实浏览器 200% 缩放。
 
-参考不够时可以按问题查资料，例如 `python3 scripts/find_reference.py "状态同步" --stack react --version 18`。目录有 68 条精选卡、22 栈官方入口，具体覆盖见 [按需检索](references/tools.md#按需检索设计与实现资料)。它不生成设计系统、不代替业务理解或实际验证；其他平台的入口不代表已完成平台验收。
+参考不够时可以按问题查资料，例如 `python3 scripts/find_reference.py "状态同步" --stack react --version 18`。目录有 69 条精选卡、22 栈官方入口，具体覆盖见 [按需检索](references/tools.md#按需检索设计与实现资料)。它不生成设计系统、不代替业务理解或实际验证；其他平台的入口不代表已完成平台验收。
 
 ## 从示范学习
 

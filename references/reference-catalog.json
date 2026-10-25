@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-24",
+  "updated_at": "2026-10-25",
   "upstream": {
     "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
     "revision": "d14efff8ed1faa4187f004f79926f428c8074ec7",
@@ -262,6 +262,14 @@
     "polaris-variants": {
       "url": "https://shopify.dev/docs/api/polaris",
       "note": "官方资料；内容为界作独立概括，使用时核对当前文档"
+    },
+    "uiverse-components": {
+      "url": "https://uiverse.io/",
+      "note": "社区作品的搜索与交互预览入口；仅提供链接，离线目录检索不会访问网站"
+    },
+    "galaxy-archive": {
+      "url": "https://github.com/uiverse-io/galaxy/tree/adbd2adde0a299a3956ea288fb444ec01891ca41",
+      "note": "已核对的源码归档版本；不分发组件代码，来源与许可见 THIRD_PARTY_NOTICES.md 的 Uiverse / Galaxy 小节"
     }
   },
   "entries": [
@@ -1759,6 +1767,44 @@
       "sources": [
         "polaris-variants",
         "shadcn-theme"
+      ]
+    },
+    {
+      "id": "uiverse-galaxy-components",
+      "domain": "implementation",
+      "title": "Galaxy / Uiverse 组件外观与微交互入口",
+      "keywords": [
+        "galaxy",
+        "uiverse",
+        "组件精修",
+        "component polish",
+        "组件外观",
+        "微交互",
+        "micro interaction",
+        "按钮",
+        "button",
+        "卡片",
+        "card",
+        "开关",
+        "switch",
+        "输入框",
+        "input",
+        "加载反馈",
+        "加载动画",
+        "loader",
+        "loading",
+        "悬停",
+        "hover",
+        "点击反馈",
+        "按压反馈"
+      ],
+      "guidance": "先读组件精修中的外观与微交互参考，再按组件类型和已定风格选择具体作品；检索只返回参考入口，不联网抓取作品。",
+      "use_when": "按钮、卡片、开关、输入框或加载反馈需要具体外观与微交互参考，且现有项目参考不足",
+      "avoid_when": "不用于决定业务流程或状态规则，不把社区单元素样例当作完整生产组件，也不整库引入",
+      "reference": "references/component-polish.md#外观与微交互参考按需",
+      "sources": [
+        "uiverse-components",
+        "galaxy-archive"
       ]
     }
   ]
