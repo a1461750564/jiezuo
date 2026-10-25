@@ -187,8 +187,6 @@ process.stdout.write(eval(writer+'; screencastList(frames,finished)'));'''
             manifest.write_text(json.dumps({'candidates': [
                 {'kind': 'html', 'source': 'b.html', 'id': 'beta', 'name': '方向乙'},
                 {'source': 'a.html', 'id': 'alpha', 'name': '方向甲'},
-                {'kind': 'image', 'source': 'sample.png'},
-                {'kind': 'html', 'source': 'https://example.test/page.html'},
             ]}), encoding='utf-8')
             for target in (folder, manifest):
                 parsed = plan(target)
@@ -196,6 +194,50 @@ process.stdout.write(eval(writer+'; screencastList(frames,finished)'));'''
                 self.assertEqual(parsed['targets'], list(reversed(expected)))
             manifest.write_text('{bad json', encoding='utf-8')
             self.assertIn('无法读取 manifest', plan(folder, ok=False))
+
+    def test_manifest_reports_candidate_coverage_without_browser(self):
+        with tempfile.TemporaryDirectory(prefix='oil-explore-coverage-') as temp:
+            folder = Path(temp)
+            page = folder / 'a.html'
+            page.write_text('<div>Candidate</div>', encoding='utf-8')
+            manifest = folder / 'manifest.json'
+            local = {'id': 'local', 'kind': 'html', 'source': 'a.html'}
+            live = {'id': 'live', 'kind': 'url', 'url': 'http://127.0.0.1:5173/orders?state=ready'}
+            image = {'id': 'picture', 'kind': 'image', 'source': 'sample.png'}
+            cases = [
+                ([local, live], [str(page), live['url']], []),
+                ([live], [live['url']], []),
+                ([local, image, live], [str(page), live['url']], ['picture']),
+                ([image], [], ['picture']),
+                ([{'id': 'remote', 'kind': 'url', 'url': 'https://example.test/'}], [], ['remote']),
+                ([{'id': 'credentials', 'kind': 'url', 'url': 'http://user:secret@localhost:5173/'}], [], ['credentials']),
+            ]
+            for candidates, expected, uncovered in cases:
+                with self.subTest(candidates=candidates):
+                    manifest.write_text(json.dumps({'candidates': candidates}), encoding='utf-8')
+                    output = folder / 'must-not-be-created'
+                    result = subprocess.run([NODE, str(SCRIPT), str(manifest), '--dry-run', '--out', str(output)],
+                                            cwd=ROOT, capture_output=True, text=True, timeout=10, encoding='utf-8')
+                    self.assertEqual(result.returncode, 1 if uncovered else 0, result.stdout + result.stderr)
+                    parsed = json.loads(result.stdout)
+                    self.assertEqual(parsed.get('targets', [parsed['target']] if parsed.get('target') else []), expected)
+                    coverage = parsed['candidateCoverage']
+                    self.assertEqual(coverage['total'], len(candidates))
+                    self.assertEqual(coverage['scheduled'], len(expected))
+                    self.assertEqual(coverage['complete'], not uncovered)
+                    self.assertEqual([c['id'] for c in coverage['uncovered']], uncovered)
+                    self.assertFalse(output.exists(), '--dry-run must not write artifacts')
+
+            manifest.write_text(json.dumps({'candidates': [image]}), encoding='utf-8')
+            output = folder / 'image-only'
+            result = subprocess.run([NODE, str(SCRIPT), str(folder), '--out', str(output)],
+                                    cwd=ROOT, capture_output=True, text=True, timeout=10, encoding='utf-8')
+            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+            report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+            self.assertTrue(report[0]['skipped'])
+            self.assertEqual(report[0]['candidate']['id'], 'picture')
+            self.assertIn('图片', report[0]['issues'][0])
+            self.assertNotIn('检查通过', result.stdout)
 
     def test_dry_run_corpus_regressions(self):
         # Twenty corpus patterns; project-specific classes, labels and text are neutralized.
@@ -580,6 +622,43 @@ fetch('../shared.txt').then(r=>r.text()).then(t=>{{if(t!=='shared')console.error
             self.assert_artifacts(output, ('sheet-2.png', 'sheet-3.png', 'sheet.png'))
             report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
             self.assertEqual([tile['label'] for tile in report[-1]['items']], ['方向甲', '方向乙'])
+        self.assert_no_browser_leftovers()
+
+    def test_manifest_url_and_uncovered_image_browser(self):
+        url, readback = self.counted_backend()
+        folder = self.folder / 'live-manifest'
+        folder.mkdir()
+        (folder / 'local.html').write_bytes(self.page.read_bytes())
+        write_solid_png(folder / 'sample.png', 16, 16, (0, 128, 96))
+        manifest = folder / 'manifest.json'
+        live = {'id': 'live', 'name': '在线候选', 'kind': 'url', 'url': url + '/'}
+        manifest.write_text(json.dumps({'candidates': [live]}), encoding='utf-8')
+        output = self.folder / 'url-only'
+        self.shoot_targets(output, [manifest], '--thumb', '--wait', '0')
+        report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+        self.assertEqual(report[0]['target'], live['url'])
+        self.assert_artifacts(output, ('live.png', 'report.json'))
+
+        manifest.write_text(json.dumps({'candidates': [
+            {'id': 'local', 'kind': 'html', 'source': 'local.html'},
+            {'id': 'picture', 'name': '截图候选', 'kind': 'image', 'source': 'sample.png'},
+            live,
+        ]}), encoding='utf-8')
+        output = self.folder / 'partial-manifest'
+        result = subprocess.run([NODE, str(SCRIPT), str(folder), '--out', str(output), '--thumb', '--wait', '0'],
+                                cwd=ROOT, env=self.env, capture_output=True, text=True, timeout=90, encoding='utf-8')
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+        uncovered = [r for r in report if r.get('skipped')]
+        self.assertEqual([r['candidate']['id'] for r in uncovered], ['picture'])
+        self.assertFalse(uncovered[0]['candidateCoverage']['complete'])
+        pages = [r for r in report if r.get('target') and not r.get('skipped')]
+        self.assertEqual([r['target'] for r in pages], [str(folder / 'local.html'), live['url']])
+        self.assert_artifacts(output, ('local.png', 'live.png', 'sheet.png', 'report.json'))
+        self.assertNotIn('检查通过', result.stdout)
+        self.assertIn('未覆盖', result.stdout + result.stderr)
+        self.assertEqual(readback()['pageLoads'], 2)
+        self.assertEqual(readback()['requests'], 0)
         self.assert_no_browser_leftovers()
 
     def test_states_masks_and_sheets(self):
@@ -2038,6 +2117,26 @@ if(clicked!==1 || !hovered || !doubled || !dragged || document.querySelectorAll(
         self.assertEqual(list(failed.glob('frames*')), [])
         self.assert_artifacts(failed, ('motion-good-end.jpg', 'motion-entry-end.jpg', 'report.json'))
         self.assertEqual(list(self.profile_root.glob('oil-shoot-*')), [])
+
+    def test_recording_preserves_preexisting_frame_directories(self):
+        for failed in (False, True):
+            with self.subTest(failed=failed):
+                output = self.folder / ('existing-frames-failure' if failed else 'existing-frames-success')
+                for name in ['frames', 'frames-go']:
+                    folder = output / name
+                    folder.mkdir(parents=True)
+                    (folder / 'keep.txt').write_text('existing evidence: ' + name, encoding='utf-8')
+                if failed:
+                    self.run_failure(output, '--record', '--steps', 'go: click .missing', '--wait', '0', '--hold', '0')
+                else:
+                    self.shoot(output, '--record', '--wait', '0', '--hold', '100')
+                    self.assert_artifacts(output, ('motion-start.jpg', 'motion-mid.jpg', 'motion-end.jpg'))
+                for name in ['frames', 'frames-go']:
+                    sentinel = output / name / 'keep.txt'
+                    self.assertTrue(sentinel.is_file(), 'existing frame directory was deleted: ' + name)
+                    self.assertEqual(sentinel.read_text(encoding='utf-8'), 'existing evidence: ' + name)
+                self.assertEqual(sorted(p.name for p in output.glob('frames*')), ['frames', 'frames-go'])
+        self.assert_no_browser_leftovers()
 
     def fault_env(self, drops='', stale=None):
         # Keep a real Chrome/CDP transport. Only selected responses are suppressed; accelerate

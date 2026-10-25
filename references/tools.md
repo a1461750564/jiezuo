@@ -26,7 +26,7 @@ node <skill>/scripts/shoot.mjs <页面地址、HTML 文件或候选目录> [选�
 | 要什么 | 加上 |
 | --- | --- |
 | 看一眼桌面效果 | `--size desktop`；不写时是手机 390x844；只看整体版式可加 `--thumb`（0.5 倍速截） |
-| 一次截完多个候选并出并排图 | 直接传候选目录（如 `explore`）或多个 HTML 文件，同一次浏览器会话截完并自动出 `sheet.png` |
+| 一次截完多个页面候选并出并排图 | 传候选目录/manifest（本地 HTML 或本机 URL）或多个 HTML 文件，同一次浏览器会话截图并自动出 `sheet.png` |
 | 只看改过的局部组件或区域 | `--selector ".card"`，自动滚入视口并只截该元素区域 |
 | 操作几步再截 | `--steps "click .open; wait 300"` |
 | 送评审或交付前取证 | `--evidence --states idle,done`（仅用于已有状态入口；带动作的重放限制见下文） |
@@ -37,6 +37,8 @@ node <skill>/scripts/shoot.mjs <页面地址、HTML 文件或候选目录> [选�
 | 把几张图拼成一张对比图，不需要页面 | `--stitch a.png --label 修改前 --stitch b.png --label 修改后` |
 
 `--states` 仅适用于已有 `?state=<名字>` 入口的原型。旧项目用已有路由、测试数据或 mock 进入状态；不要为取证向业务代码注入调试参数。其他选项见 `--help`；`--dry-run` 只解析计划，不启动浏览器，输出 `execution` 中的重复次数与是否阻止执行。
+
+manifest 中的图片或无效候选会显式列为未覆盖，`--dry-run` 的 `candidateCoverage` 和实际 `report.json` 的 `skipped` 记录保留原因，返回码为 1。混合输入仍为有效页面取证；仅有未覆盖候选时不启动浏览器。图片可查看原图或单独用 `--stitch` 拼图，不冒充页面检查。录屏帧使用本次独占的随机临时目录，清理不复用已有的 `frames` 或 `frames-组名` 目录。
 
 **动作默认不重放。** 所有 `--steps` 都可能产生写入，脚本不凭 click/hover 名称猜安全性。普通截图按目标×尺寸×密度×状态执行每组；`--evidence` 的探测和录屏各执行一次，`--motion` 叠加截图或录屏也执行两次。默认拒绝这些重复组合；带步骤时超时不整次重跑，失败停止后续动作与重建重放。单次提交可用一个目标/状态/尺寸/倍数的截图，或 `--record --steps "click .send; waitfor text=已保存"` 一次录下操作与终态，再读回后台结果。
 

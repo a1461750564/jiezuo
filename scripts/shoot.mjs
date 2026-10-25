@@ -43,7 +43,7 @@ const HELP = `常用命令：
   --compare <参考图>    截图与 png/jpg/webp 参考图出四格对比和九宫格差异报告
   --wait <毫秒>         页面加载后等待时间，默认 400；截图另等有限动画，最多 2 秒
   --timeout-scale <倍数> 整体放宽协议、启动和编码超时，例如 --timeout-scale 2；默认 1
-  --dry-run             只检查选项和动作写法，输出解析 JSON，不启动浏览器
+  --dry-run             只检查选项和动作写法，输出解析 JSON，不启动浏览器；候选未覆盖时返回 1
   --stitch <图片>       拼图，不需要页面：可写多次，每张后面可接 --label <标注>；输出 stitch.png，--columns <列数> 默认 2
   --frames <帧数>       配合 --record，另出 motion[-组名]-sequence.png：均匀取 2–120 帧并标时间，默认最多 4 列，--columns 可改
 
@@ -96,6 +96,8 @@ const HELP = `常用命令：
   report.json 的最外层是数组，每个元素是一张图或一项检查的结果；lint、motion、issues 在各个元素里。结构示意：
   [{"file":"idle.png","lint":[],"issues":[]},
    {"file":"motion-probe","motion":{},"issues":[]}]
+  manifest 支持本地 HTML 和 kind=url 的本机地址。图片或无效候选写入 skipped 和 candidateCoverage，
+  返回码为 1；混合输入仍保存可取证页面。只有未覆盖候选时不启动浏览器，不能把部分截图当作全部完成。
 
 录屏怎样取样：
   动作录屏的开始帧取最后一个 click、dblclick、drag、type、fill、select 或 key 派发前，
@@ -260,6 +262,8 @@ for (let i = 0; i < args.length; i++) {
 }
 // Expand explorer inputs before dry-run, without requiring ordinary page paths to exist.
 let batchMode = positional.length > 1;
+let manifestInput = false;
+const uncoveredCandidates = [];
 const localPath = (value) => /^file:\/\//i.test(value) ? fileURLToPath(value) : resolve(value);
 function expandTarget(value) {
   if (/^https?:\/\//i.test(value)) return [{ target: value }];
@@ -278,32 +282,51 @@ function expandTarget(value) {
     return pages.flatMap((page) => expandTarget(join(path, page)));
   }
   if (basename(path).toLowerCase() === "manifest.json") {
-    batchMode = true;
+    batchMode = true; manifestInput = true;
     let manifest;
     try { manifest = JSON.parse(readFileSync(path, "utf8")); }
     catch (error) { fail(`无法读取 manifest：${value}（${error.message}）`); }
     if (!Array.isArray(manifest.candidates)) fail(`manifest 缺少 candidates 数组：${value}`);
-    const candidates = manifest.candidates.filter((c) => c && (!c.kind || c.kind === "html") && typeof c.source === "string" && /\.html?$/i.test(c.source) && !/^[a-z][a-z\d+.-]*:/i.test(c.source));
-    if (!candidates.length) fail(`manifest 里找不到本地 HTML 候选：${value}`);
-    return candidates.map((c) => ({ target: resolve(dirname(path), c.source), id: c.id, name: c.name }));
+    return manifest.candidates.flatMap((c, index) => {
+      const kind = c?.kind ?? "html";
+      let reason;
+      if (kind === "html" && typeof c?.source === "string" && /\.html?$/i.test(c.source) && !/^[a-z][a-z\d+.-]*:/i.test(c.source)) {
+        return [{ target: resolve(dirname(path), c.source), id: c.id, name: c.name }];
+      }
+      if (kind === "url" && typeof c?.url === "string") {
+        try {
+          const value = c.url.trim(), url = new URL(value);
+          if (!["http:", "https:"].includes(url.protocol) || !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname.toLowerCase()) || url.username || url.password) throw new Error("not local");
+          return [{ target: value, id: c.id, name: c.name }];
+        } catch { reason = "URL 候选必须是不含凭据的本机 http(s) 地址"; }
+      } else if (kind === "image") reason = "图片候选不执行页面截图或 lint；请查看原图，或用 --stitch 单独拼图，并记录页面交互未验证";
+      else reason = kind === "html" ? "HTML 候选需要本地 .html 文件；本机地址请使用 kind=url 和 url 字段" : kind === "url" ? "URL 候选缺少 url 字段" : `不支持候选类型 ${JSON.stringify(kind)}`;
+      uncoveredCandidates.push({ manifest: path, index: index + 1, id: c?.id, name: c?.name, kind, ...(typeof c?.source === "string" ? { source: c.source } : {}), reason });
+      return [];
+    });
   }
   return [{ target: value }];
 }
 const targets = positional.flatMap(expandTarget);
 const target = targets[0]?.target;
+const candidateCoverage = manifestInput ? { total: targets.length + uncoveredCandidates.length, scheduled: targets.length, uncovered: uncoveredCandidates, complete: uncoveredCandidates.length === 0 } : null;
+const uncoveredReports = uncoveredCandidates.map((candidate, index) => ({
+  file: `candidate-uncovered-${index + 1}`, candidate, skipped: true,
+  issues: [`候选未覆盖：${candidate.reason}`], ...(index === 0 ? { candidateCoverage } : {}),
+}));
 // IDs become filenames only after removing separators and reserved path components.
 const targetStem = (candidate) => {
   const source = candidate.id || basename(/^https?:\/\//i.test(candidate.target) ? new URL(candidate.target).pathname : localPath(candidate.target), extname(candidate.target));
   return String(source).replace(/[<>:"/\\|?*\x00-\x1f]/g, "-").replace(/^[. ]+|[. ]+$/g, "") || "page";
 };
 const stitching = stitchInputs.length > 0;
-if (!target && !stitching) {
+if (!target && !stitching && !uncoveredCandidates.length) {
   if (opt.frames !== undefined || opt.columns !== undefined) fail(`缺少页面或拼图输入，收到 ${args.join(" ")}；例如 page.html --record --frames 8 --columns 4，或 --stitch before.png --stitch after.png --columns 2`);
   fail("缺少页面地址或文件。");
 }
 if (stitching) {
   const incompatible = [...suppliedOptions].filter((key) => !["stitch", "label", "columns", "out", "timeout-scale"].includes(key));
-  if (target || incompatible.length || [...flags].some((key) => key !== "dry-run" && key !== "force")) fail(`拼图不需要页面或截图/录屏选项，收到 ${target || incompatible.map((key) => "--" + key).join("、") || [...flags].join("、")}；例如 --stitch before.png --label "修改前" --stitch after.png --label "修改后" --columns 2 --out shots`);
+  if (target || manifestInput || incompatible.length || [...flags].some((key) => key !== "dry-run" && key !== "force")) fail(`拼图不需要页面或截图/录屏选项，收到 ${target || incompatible.map((key) => "--" + key).join("、") || [...flags].join("、")}；例如 --stitch before.png --label "修改前" --stitch after.png --label "修改后" --columns 2 --out shots`);
   for (const [i, image] of stitchInputs.entries()) {
     try { if (!statSync(image.path).isFile()) throw new Error("不是文件"); }
     catch { fail(`拼图第 ${i + 1} 张图片不存在或不是文件，收到 ${image.path}；例如 --stitch before.png --label "修改前" --out shots`); }
@@ -383,10 +406,19 @@ const execution = {
   blocked: noReplay && targets.length * stepPasses > 1,
 };
 if (flags.has("dry-run")) {
-  console.log(JSON.stringify({ execution, target, ...(targets.length > 1 ? { targets: targets.map((t) => t.target) } : {}), selector, options: opt, flags: [...flags], sizes, zooms, states, groups, marks, notices, ...(stitching ? { stitch: stitchInputs } : {}) }, null, 2));
-  process.exit(0);
+  console.log(JSON.stringify({ execution, target, ...(targets.length > 1 ? { targets: targets.map((t) => t.target) } : {}), ...(candidateCoverage ? { candidateCoverage } : {}), selector, options: opt, flags: [...flags], sizes, zooms, states, groups, marks, notices, ...(stitching ? { stitch: stitchInputs } : {}) }, null, 2));
+  process.exit(uncoveredCandidates.length ? 1 : 0);
 }
 if (execution.blocked) fail(`此组合会隐式重放每组步骤 ${execution.stepsPerGroup} 次，已在启动浏览器前停止；使用单目标/状态/尺寸/倍数的截图或单次 --record。仅确认只读或隔离假数据可重放后才加 --replay-safe`);
+// Unsupported-only manifests are reported without starting a browser or a worker.
+if (!targets.length && uncoveredReports.length) {
+  const output = resolve(opt.out);
+  mkdirSync(output, { recursive: true });
+  writeFileSync(join(output, "report.json"), JSON.stringify(uncoveredReports, null, 2));
+  console.log(`输出目录：${output}`);
+  for (const row of uncoveredReports) console.error(`shoot：${row.file} ${row.issues.join("；")}`);
+  process.exit(1);
+}
 // A small supervisor preserves the complete invocation and gives every run fresh state.
 // The worker reports only transport/startup timeouts with 75; ordinary failures stay 1.
 const attemptKey = "OIL_SHOOT_TIMEOUT_ATTEMPT";
@@ -413,6 +445,11 @@ if (workerAttempt === undefined) {
 if (typeof WebSocket !== "function") fail("需要 Node 22 或更新的版本。");
 const out = resolve(opt.out);
 mkdirSync(out, { recursive: true });
+if (uncoveredReports.length) {
+  writeFileSync(join(out, "report.json"), JSON.stringify(uncoveredReports, null, 2));
+  for (const row of uncoveredReports) console.error(`shoot：${row.file} ${row.issues.join("；")}`);
+  process.exitCode = 1;
+}
 const temporaryFrames = new Set(), encoders = new Set();
 function removeFrames() { for (const dir of temporaryFrames) rmSync(dir, { recursive: true, force: true }); temporaryFrames.clear(); }
 
@@ -2063,8 +2100,8 @@ async function record(url, w, h, { steps = [], name = "", entry = flags.has("ent
   const video = `record${name ? "-" + name : ""}.mp4`;
   const motion = `motion${name ? "-" + name : ""}`;
   const frames = [];
-  const dir = join(out, name ? `frames-${name}` : "frames");
-  mkdirSync(dir, { recursive: true }); temporaryFrames.add(dir);
+  const dir = mkdtempSync(join(out, name ? `frames-${name}-` : "frames-"));
+  temporaryFrames.add(dir);
   let identifier, actionStart, actionEnd, beforeAction, painted = 0;
   const lastAction = steps.findLastIndex((s) => ["click", "dblclick", "drag", "type", "fill", "select", "key"].includes(s.action));
   const captureFrame = async (label) => {
@@ -2338,7 +2375,7 @@ const withState = (s) => {
   if (s) u.searchParams.set(opt.param, s);
   return u.toString();
 };
-const report = [], lines = [];
+const report = [...uncoveredReports], lines = uncoveredReports.map((r) => `${r.file}  ⚠ ${r.issues.join("；")}`);
 const usedFiles = new Set();
 const targetShots = [];
 const autoSheet = targets.length > 1 && !flags.has("no-sheet") && (!flags.has("record") || flags.has("evidence"));
@@ -2500,7 +2537,8 @@ const batchMask = states.length > 1 || flags.has("mask");
 progressTotal = evidence
   ? (suppliedOptions.has("zoom") ? shotCount(states.length, zooms.length, 1, batchMask, states.length > 1) : shotCount(states.length, 1, 1, batchMask, states.length > 1) + shotCount(1, 1, 1, flags.has("mask"), false)) + Math.max(1, groups.length) + 1 + groups.length
   : (flags.has("motion") ? Math.max(1, groups.length) : 0) + (flags.has("record") ? zooms.length * Math.max(1, groups.length) : shotCount(states.length, zooms.length, Math.max(1, groups.length), flags.has("mask"), flags.has("sheet")));
-progressTotal = progressTotal * Math.max(1, targets.length) + Number(autoSheet);
+progressTotal = progressTotal * Math.max(1, targets.length) + Number(autoSheet) + uncoveredReports.length;
+for (const row of uncoveredReports) progress(row.file, "skipped");
 try {
   if (stitching) {
     progressTotal = 1;
