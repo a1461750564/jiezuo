@@ -75,3 +75,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Uiverse / Galaxy
+
+External reference: [Uiverse](https://uiverse.io/) and [uiverse-io/galaxy](https://github.com/uiverse-io/galaxy), reviewed at revision `adbd2adde0a299a3956ea288fb444ec01891ca41`.
+
+`references/component-polish.md` links to selected-work discovery and source inspection for component appearance and micro-interactions. No Galaxy component code, dataset or dependency is bundled or installed. The archive uses the [MIT license](https://github.com/uiverse-io/galaxy/blob/adbd2adde0a299a3956ea288fb444ec01891ca41/LICENSE), copyright (c) 2023 Uiverse.io. If code is later copied into a project, retain its applicable copyright and permission notice, creator/source information, and any separate notices for embedded assets.
