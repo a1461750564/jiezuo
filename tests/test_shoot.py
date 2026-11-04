@@ -1131,6 +1131,76 @@ h1{margin:40px;height:300px;background:#1e3a8a;animation:rise .3s ease-out both}
                     self.assertIn(expected, issues)
 
 
+    def test_design_declared_status_preserves_checks(self):
+        tokens = {'fonts': ['Arial'], 'colors': ['#ffffff', '#121c28'],
+                  'radii': [6], 'fontSizes': [16]}
+        pages = []
+        for name, font, color, radius, size in (
+                ('matching', 'Arial', '#121c28', 6, 16),
+                ('deviating', 'Georgia', '#b45a34', 24, 28)):
+            page = self.folder / (name + '.html')
+            page.write_text('<!doctype html><meta charset="utf-8"><link rel="icon" href="data:,">'
+                            '<style>body{margin:0;padding:24px;background:#ffffff}'
+                            f'p{{font: {size}px {font};color:{color};border-radius:{radius}px;'
+                            'padding:16px;border:1px solid currentColor}</style>'
+                            '<p>核验依据</p>', encoding='utf-8')
+            pages.append(page)
+        design = self.folder / 'DESIGN.md'
+        rules = ('designFont', 'designColor', 'designRadius', 'designSize')
+        baseline = None
+        cases = [('absent', {}, 'unspecified'), ('draft', {'status': 'draft'}, 'draft'),
+                 ('confirmed', {'status': 'confirmed'}, 'confirmed'),
+                 ('unknown', {'status': 'proposed'}, 'proposed'),
+                 ('null', {'status': None}, None), ('false', {'status': False}, False)]
+        for name, declaration, expected in cases:
+            with self.subTest(status=name):
+                design.write_text('规范状态：草稿（待确认）\n\n```oil-ui-tokens\n'
+                                  + json.dumps(dict(tokens, **declaration)) + '\n```', encoding='utf-8')
+                output = self.folder / name
+                result = subprocess.run([NODE, str(SCRIPT), ','.join(map(str, pages)),
+                                         '--out', str(output), '--size', '1440x900',
+                                         '--design', str(design), '--wait', '0', '--no-sheet'],
+                                        cwd=ROOT, env=self.env, capture_output=True, text=True,
+                                        timeout=90, encoding='utf-8')
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                report = json.loads((output / 'report.json').read_text(encoding='utf-8'))
+                self.assertEqual(len(report), 2)
+                hits = {}
+                for item in report:
+                    coverage = item['lintCoverage']['design']
+                    self.assertEqual(coverage['status'], 'partial')
+                    self.assertEqual(coverage['declaredStatus'], expected)
+                    self.assertEqual(type(coverage['declaredStatus']), type(expected))
+                    self.assertEqual(set(coverage['declared']), set(tokens))
+                    counts = {rule: sum(hit['count'] for hit in item['lint'] if hit['rule'] == rule)
+                              for rule in rules}
+                    page_name = Path(item['target']).stem
+                    hits[page_name] = counts
+                    if page_name == 'matching':
+                        self.assertTrue(all(count == 0 for count in counts.values()), item['lint'])
+                    else:
+                        self.assertTrue(all(count > 0 for count in counts.values()), item['lint'])
+                if baseline is None:
+                    baseline = hits
+                self.assertEqual(hits, baseline)
+
+        self.page = pages[0]
+        for name, text, expected in (
+                ('no-design', None, 'notRequested'),
+                ('no-block', '规范状态：已确认', 'notRun'),
+                ('invalid-json', '```oil-ui-tokens\n{\n```', 'failed')):
+            with self.subTest(status=name):
+                args = ()
+                if text is not None:
+                    design.write_text(text, encoding='utf-8')
+                    args = ('--design', str(design))
+                output = self.folder / name
+                self.shoot(output, '--size', '1440x900', '--wait', '0', '--no-sheet', *args)
+                item = json.loads((output / 'report.json').read_text(encoding='utf-8'))[0]
+                self.assertEqual(item['lintCoverage']['design']['status'], expected)
+                self.assertEqual(item['lintCoverage']['design']['declaredStatus'], 'unspecified')
+                self.assertFalse(any(hit['rule'] in rules for hit in item['lint']))
+
     def test_pro8_lint_positive_and_negative_fixtures(self):
         fixtures = json.loads((ROOT / 'tests/fixtures/pro8-lint.json').read_text(encoding='utf-8'))
         design = self.folder / 'DESIGN.md'

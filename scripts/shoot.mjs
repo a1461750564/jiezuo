@@ -1351,7 +1351,7 @@ function lintPage() {
   }
   // Optional explicit DESIGN.md contract; never infer tokens from arbitrary prose.
   const policy=arguments[0];
-  coverage.design=policy?{status:policy.status,source:policy.source,declared:Object.keys(policy.tokens||{}),reason:policy.reason||null}:{status:'notRequested'};
+  coverage.design=policy?{status:policy.status,declaredStatus:policy.declaredStatus===undefined?'unspecified':policy.declaredStatus,source:policy.source,declared:Object.keys(policy.tokens||{}),reason:policy.reason||null}:{status:'notRequested',declaredStatus:'unspecified'};
   if(policy?.tokens){
     const tokens=policy.tokens;
     const allowedColors=(tokens.colors||[]).map(rgba);
@@ -1413,7 +1413,7 @@ const designPolicy = (() => {
     if (Array.isArray(value.fonts) && value.fonts.every(x => typeof x === "string" && x.trim())) tokens.fonts = value.fonts;
     if (Array.isArray(value.colors) && value.colors.every(x => typeof x === "string" && /^#[0-9a-f]{6}$/i.test(x))) tokens.colors = value.colors;
     for (const key of ["radii", "fontSizes"]) if (Array.isArray(value[key]) && value[key].every(x => Number.isFinite(x) && x >= 0)) tokens[key] = value[key];
-    return { source, status: "partial", tokens, reason: "仅检查显式允许值；颜色含文字/可见填充/边框，圆角四角；变量/响应式值需显式枚举" };
+    return { source, status: "partial", declaredStatus: Object.hasOwn(value, "status") ? value.status : "unspecified", tokens, reason: "仅检查显式允许值；颜色含文字/可见填充/边框，圆角四角；变量/响应式值需显式枚举" };
   } catch (error) { return { source, status: "failed", reason: error.message.slice(0,160) }; }
 })();
 let lintCoverage, lintHeroVisual;

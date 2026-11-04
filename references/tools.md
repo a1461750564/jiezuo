@@ -127,11 +127,11 @@ python3 <skill>/scripts/find_reference.py --list
 `node scripts/shoot.mjs page.html --design /项目/DESIGN.md --out shots` 只报不拦。规范正文不作猜测；显式声明允许值，例如：
 
 ```oil-ui-tokens
-{"fonts":["PingFang SC","Georgia"],"colors":["#193d32","#ffffff"],"radii":[0,4,8],"fontSizes":[12,14,16,24,40]}
+{"status":"draft","fonts":["PingFang SC","Georgia"],"colors":["#193d32","#ffffff"],"radii":[0,4,8],"fontSizes":[12,14,16,24,40]}
 ```
 
 数组可按当前改造范围只列一部分；字号与圆角单位为 CSS px，颜色为六位十六进制，字体是计算后首选族名。响应式字号需列实际允许值。读取失败/缺块/部分覆盖写入 `lintCoverage.design`，不据此判通过。字体/字号检查可见文字，颜色检查文字、可见填充与边框，圆角检查四角；渐变、透明合成、变量语义和完整组件规范仍需人工核对。
 
-规范状态写在正文开头：`规范状态：草稿（待确认）` 或 `规范状态：已确认`，附依据与适用范围。解析器只读取首个 `oil-ui-tokens` 块的上述四个数组，`status` 等额外字段会被忽略，不构成确认校验；`lintCoverage.design.status` 表示检查覆盖状态，不是规范的审批状态。报告须人工区分“与当前草稿一致”和“在已检查的四类值内符合已确认规范”。零命中只能说明声明允许值内未发现偏离，不能证明这些允许值选得正确；提炼来源与范围见 [规范依据与沉淀](existing-project.md#规范依据与沉淀)。
+规范状态写在正文开头：`规范状态：草稿（待确认）` 或 `规范状态：已确认`，附依据与适用范围。首个 `oil-ui-tokens` 块的 `status` 可相应写为 `draft` / `confirmed`，原样透传到 `lintCoverage.design.declaredStatus`；字段缺省、缺块或读取失败时为 `unspecified`，不从正文推断。其他声明值也保留原值，不自动归为已确认。`lintCoverage.design.status` 仍表示检查覆盖状态（如 `partial` / `notRun` / `failed` / `notRequested`），检查类别仍只有上述四个数组，命中与退出逻辑不因声明改变。声明不等于批准证明：报告须结合依据区分“与当前草稿一致”和“在已检查的四类值内符合已确认规范”。零命中只能说明声明允许值内未发现偏离，不能证明这些允许值选得正确；提炼来源与范围见 [规范依据与沉淀](existing-project.md#规范依据与沉淀)。
 
 `lint` 的 `level=hint` 是风格或启发式线索，`warning` 是需核实的质量问题；两者都不改变退出状态。可疑字体、配色、奶油底、网格、动效或中点/箭头如有品牌、语义或用户依据应记录保留理由，不为清零删除信息。中文过紧字距阈值小于 -0.04em（拉丁小于 -0.055em）；行尾按实际字形测量，显式换行也会提示。规则覆盖边界见 `lintCoverage`，不能用零命中代替实际看图、键盘和状态走查。
